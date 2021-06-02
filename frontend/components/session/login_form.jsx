@@ -12,6 +12,10 @@ class LoginForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleInput(type) {
     return e => {
       this.setState({[type]: e.currentTarget.value})
@@ -46,7 +50,7 @@ class LoginForm extends React.Component {
           {this.renderErrors()}
           <button type="submit" className="login-button">Sign-In</button>
         </form>
-        
+
         <div>
           <p>New to Alwayzon?</p>
           <Link to="/signup">Create your Alwayzon account</Link>

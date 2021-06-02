@@ -12,11 +12,3 @@
  *
  *= require_self
  */
-
- // CSS Reset 
-@import "base/reset.scss"
- // Core
-@import "base/colors.scss"
-
- // Components
- @import "components/comp-name.scss"

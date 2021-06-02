@@ -16,6 +16,10 @@ class SignupForm extends React.Component {
     this.passwordMatch = this.passwordMatch.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleInput(type) {
     return e => {
       this.setState({[type]: e.currentTarget.value})
@@ -30,7 +34,7 @@ class SignupForm extends React.Component {
       email: this.state.email,
       password: this.state.password
     }
-    this.props.signup(user);
+    if (this.passwordMatch()) this.props.signup(user);
   }
 
   passwordMatch() {
