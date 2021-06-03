@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoTriangleDown } from 'react-icons/Go';
+import { GoTriangleDown } from 'react-icons/go';
 import { IoMdRadioButtonOn } from 'react-icons/io';
 
 const Flag = () => (
