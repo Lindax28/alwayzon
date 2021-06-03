@@ -1,17 +1,20 @@
 import React from 'react';
-import { GrLocation } from 'react-icons/Gr';
-import { IconContext } from 'react-icons';
 import { LocationIcon } from '../../custom_icons/location_icon'
+import { BiCurrentLocation } from 'react-icons/Bi';
+import { Link } from 'react-router-dom';
 
 const Address = () => {
   return(
-      <div className="address">
+      <Link className="address" to='/login'>
         <p className="nav-small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello</p>
         <p className="bold"><LocationIcon/>&nbsp;Select your address</p>
-        <div className="location">
-          <input type="text" value="San Francisco"/>
-        </div>
-      </div>
+        {/* <div className="location">
+          <p className="location-box">
+            <BiCurrentLocation fill="black"/>
+            <span class="location-text">San Francisco, CA</span>
+          </p>
+        </div> */}
+      </Link>
   )
 };
 

@@ -2,7 +2,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: #131921;
+  background-color: $almost-black;
   font-size: 0.6em;
   font-family: Arial, Helvetica, sans-serif;
   padding-right: 1rem;
@@ -17,7 +17,7 @@
     height: 3em;
     padding: 0.3em 0.5em 0.3em 0.5em;
     margin: 0.1em;
-    border: 1px solid #131921;
+    border: 1px solid $almost-black;
   }
   :hover {
     border: 1px solid gray;
@@ -26,17 +26,63 @@
 
 // Address
 .address {
+  text-decoration: none;
   color: white;
   margin: 2px;
   padding: 3px;
   padding-left: 7px;
   padding-right: 7px;
-  border: 1px solid #131921;
+  border: 1px solid $almost-black;
   &:hover {
     border: 1px solid gray;
     cursor: pointer;
   }
+  &:hover .location {
+    display: block;
+  }
 }
+
+// .location {
+//   display: none;
+//   font-size: 0.5rem;
+//   position: absolute;
+//   background-color: white;
+//   border: 1px solid gray;
+//   top: 29px;
+//   left: 117px;
+//   cursor: default;
+//   height: 5em;
+//   width: 13em;
+//   border-radius: 0.2em;
+//   padding: 6px 8px;
+//   &:after {
+//   content: "";
+//   position:absolute;
+//   margin-top:-6px;
+//   margin-left:-5px;
+//   border-left: 12px solid transparent;
+//   border-right: 12px solid transparent;
+//   border-bottom: 12px solid white;
+//   right: 8px; 
+//   top: 0px;
+//   }
+// }
+
+// .location-box {
+//   font-size: 0.7rem;
+//   color: $almost-black;
+//   outline: none;
+//   margin: 3px;
+//   padding: 2px;
+//   border: 1px solid $almost-black;
+//   border-radius: 0.5em;
+//   box-shadow:0 0 3px #bfbfbf inset;
+//   .location-text {
+//     font-size: 0.4rem;
+//     padding-bottom: 1em;
+//     padding-left: 0.5em;
+//   }
+// }
 
 // Searchbar
 .searchbar {
@@ -45,9 +91,15 @@
   width: 60%;  
   height: 80%;
   top: 10%;
+  input[type=text] {
+  border: 2px solid $almost-black;
+  border-right: none;
+  border-left: none;
+  outline: none;
   &:focus {
-    background-color: green;
+  border: 2px solid #ffb917;
   }
+}
 }
 
 .search-input {
@@ -57,21 +109,10 @@
   padding: 0.5em;
 }
 
-input[type=text] {
-  border: 2px solid #131921;
-  border-right: none;
-  border-left: none;
-  box-shadow: none;
-  outline: none;
-  &:focus {
-  border: 2px solid #ffb917;
-  }
-}
-
 .search-button, .search-menu {
   text-align: center;
   cursor: pointer;
-  border: 2px solid #131921;
+  border: 2px solid $almost-black;
 }
 
 .search-button {
@@ -102,7 +143,7 @@ input[type=text] {
 .flag {
   margin-top: 0.2em;
   padding: 7px;
-  border: 1px solid #131921;
+  border: 1px solid $almost-black;
   img {
     width: 1.4em;
     height: 1em;
@@ -151,7 +192,7 @@ input[type=text] {
     cursor: pointer;
   }
   &:active {
-    fill: #131921;
+    fill: $almost-black;
   } 
 }
 
@@ -159,7 +200,7 @@ input[type=text] {
 .greeting {
   margin: 2px;
   padding: 0.4em 0.9em 0.5em 1em;
-  border: 1px solid #131921;
+  border: 1px solid $almost-black;
   &:hover {
     border: 1px solid gray;
   }
@@ -231,7 +272,7 @@ input[type=text] {
   margin: 0.2em;
   padding: 0.8em;
   padding-top: 0.5em;
-  border: 1px solid #131921;
+  border: 1px solid $almost-black;
   &:hover {
     border: 1px solid gray;
   }
