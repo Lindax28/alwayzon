@@ -52,9 +52,9 @@ class SignupForm extends React.Component {
 
   render() {
     return(
-      <main className="login-form">
-        <h1>Create account</h1>
-        <form onSubmit={this.handleSubmit}>
+      <main className="signup-page">
+        <form onSubmit={this.handleSubmit} className="signup-form">
+          <h1>Create account</h1>
           <label>First name
             <input type="text" value={this.state.firstName} onChange={this.handleInput("firstName")} className="signup-input"/>
           </label>
@@ -70,13 +70,14 @@ class SignupForm extends React.Component {
           <label>Re-enter password
             <input type="password" value={this.state.confirmPassword} onChange={this.handleInput("confirmPassword")} className="signup-input"/>
           </label>
-          { this.renderErrors() }
-          <button type="submit" className="signup-button">Create your Alwayzon account</button>
+          <p className="login-errors">{this.renderErrors()}</p>
+          <button type="submit" className="login-button signup-button">Create your Alwayzon account</button>
+          <p id="signup-conditions">By creating an account, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
         </form>
 
-        <div>
-          <p>Already have an account?</p>
-          <Link to="/login">Sign-In</Link>
+        <div className="signup-to-login">
+          <span>Already have an account?</span>
+          <span><Link className="login-link" to="/login">Sign-In</Link></span>
         </div>
       </main>
     );

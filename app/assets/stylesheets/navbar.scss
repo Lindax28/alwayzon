@@ -97,7 +97,7 @@
   border-left: none;
   outline: none;
   &:focus {
-  border: 2px solid #ffb917;
+  border: 1.5px solid #ffb917;
   }
 }
 }
@@ -243,6 +243,14 @@
   background-color: white;
   * {
     text-align: center;
+  }
+  h2 {
+    font-weight: bold;
+    margin: 0.3rem;
+  }
+  li {
+    margin: 0.2rem;
+    text-align: left;
   }
   &:after {
   content: "";
