@@ -11,9 +11,9 @@
 }
 
 // Logo
-.logo {
+.dark-logo {
   img {
-    width: 7em;
+    width: 6.8em;
     height: 3em;
     padding: 0.3em 0.5em 0.3em 0.5em;
     margin: 0.1em;
@@ -141,6 +141,7 @@
 
 // Language
 .flag {
+  display: relative;
   margin-top: 0.2em;
   padding: 7px;
   border: 1px solid $almost-black;
@@ -164,8 +165,8 @@
   position: absolute;
   background-color: white;
   border: 1px solid gray;
-  top:30px;
-  right: 164px;
+  top: 3.6em;
+  right: 20.5em;
   cursor: default;
   height: 3em;
   width: 10em;
@@ -198,6 +199,7 @@
 
 // Greeting
 .greeting {
+  display: relative;
   margin: 2px;
   padding: 0.4em 0.9em 0.5em 1em;
   border: 1px solid $almost-black;
@@ -215,13 +217,10 @@
   display: inline-block;
   text-decoration: none;
   background: linear-gradient(#ffdb82, #f0bf43);
-  border: 1px solid gray;
   padding: 0.4em;
   border: 0.1em solid gray;
-  margin: 0 0.3em 0.3em 0;
   border-radius: 0.2em;
   text-align: center;
-  transition: all 0.2s;
   width: 12em;
   font-size: 9px;
   margin: 2px;
@@ -237,8 +236,8 @@
   position: absolute;
   border: 1px solid gray;
   padding: 10px;
-  top: 30px;
-  right: 70px;
+  top: 3em;
+  right: 7.2em;
   border-radius: 0.2em;
   background-color: white;
   * {
@@ -292,10 +291,6 @@
 }
 
 // Misc
-.bold {
-  font-weight: bold;
-}
-
 .nav-small {
   font-size: 8px;
 }

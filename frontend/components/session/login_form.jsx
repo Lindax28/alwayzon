@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LightLogo } from '../navbar/logo';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -28,6 +29,12 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
+  loginDemo() {
+    this.setState({email: "demo-user@email.com", password: "password"})
+    const demo = {email: "demo-user@email.com", password: "password"}
+    this.props.login(demo);
+  }
+
   renderErrors() {
     return(
       <ul className="session-error-list">
@@ -39,6 +46,7 @@ class LoginForm extends React.Component {
   render() {
     return(
       <main className="login-page">
+        <LightLogo />
         <form className="login-form" onSubmit={this.handleSubmit}>
           <h1>Sign-In</h1>
           <label>Email<br></br>
@@ -47,14 +55,16 @@ class LoginForm extends React.Component {
           <label>Password<br></br>
             <input type="password" value={this.state.password} onChange={this.handleInput("password")} className="login-input"/>
           </label>
-          <div className="login-errors">{this.renderErrors()}</div>
-          <button type="submit" className="login-button login-submit">Sign-In</button>
+          <div className="auth-errors">{this.renderErrors()}</div>
+          <button type="submit" className="login-button login-submit glow-on-click">Sign-In</button>
+          <button type="button" onClick={this.loginDemo} className="login-submit demo-button demo-glow-on-click">Sign-In as demo user</button>
+          <p id="signup-conditions">By continuing, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
         </form>
 
         <div className="login-to-signup">
           <h3><span>New to Alwayzon?</span></h3>
           <Link to="/signup">
-            <button type="button" className="redirect-signup">Create your Alwayzon account</button>
+            <button type="button" className="redirect-signup glow-on-click">Create your Alwayzon account</button>
           </Link>
         </div>
       </main>

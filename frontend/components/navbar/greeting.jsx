@@ -30,7 +30,7 @@ const Greeting = (props) => {
       <nav className="login-flyout">
         <Link to="/login" className="login-button">Sign in</Link>
         <div id="small-msg">
-          New customer? <Link to="/signup">Start here.</Link>
+          <p>New customer? <Link to="/signup">Start here.</Link></p>
         </div>
       </nav>
     </div>

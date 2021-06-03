@@ -1,0 +1,45 @@
+.light-logo {
+  img {
+    width: 7em;
+    height: 4em;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    margin: 0.1em;
+    border: 1px solid white;
+  }
+}
+
+.glow-on-click:active {
+  border: 1px solid darkorange;
+  box-shadow:0 0 2px darkorange;
+}
+
+.auth-errors {
+  color: darkred;
+}
+
+.demo-button {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(#47d15d, #00ad1c);
+  padding: 0.5em;
+  border: 0.1em solid gray;
+  border-radius: 0.2em;
+  text-align: center;
+  width: 12em;
+  font-size: 9px;
+  margin: 2px;
+  margin-bottom: 5px;
+  &:hover {
+    background: linear-gradient(#2ab540, #00ad1c);
+    cursor: pointer;
+  }
+}
+
+.demo-glow-on-click:active {
+  border: 1px solid #006911;
+  box-shadow: 0 0 2px #0eb028;
+}
+
+.bold {
+  font-weight: bold;
+}

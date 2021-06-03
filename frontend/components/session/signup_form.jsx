@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { LightLogo } from '../navbar/logo';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class SignupForm extends React.Component {
   render() {
     return(
       <main className="signup-page">
+        <LightLogo />
         <form onSubmit={this.handleSubmit} className="signup-form">
           <h1>Create account</h1>
           <label>First name
@@ -70,8 +72,9 @@ class SignupForm extends React.Component {
           <label>Re-enter password
             <input type="password" value={this.state.confirmPassword} onChange={this.handleInput("confirmPassword")} className="signup-input"/>
           </label>
-          <div className="login-errors">{this.renderErrors()}</div>
-          <button type="submit" className="login-button signup-button">Create your Alwayzon account</button>
+          <div className="auth-errors">{this.renderErrors()}</div>
+          <button type="submit" className="login-button signup-button glow-on-click">Create your Alwayzon account</button>
+          <button type="button" className="login-submit demo-button demo-glow-on-click">Sign-In as demo user</button>
           <p id="signup-conditions">By creating an account, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
         </form>
 

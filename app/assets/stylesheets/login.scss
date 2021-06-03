@@ -1,7 +1,9 @@
 .login-page {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: auto;
-  top: 10%;
   right: 0;
   left: 0;
   width: 200px;
@@ -79,6 +81,5 @@
   }
 }
 
-.login-errors {
-  color: darkred;
-}
+
+

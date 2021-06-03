@@ -18,6 +18,9 @@
 
  $almost-black: #131921;
  $default-font: Arial, Helvetica, sans-serif;
+
+ @import "shared.scss";
+ 
  @import "navbar.scss";
 
  @import "login.scss";
