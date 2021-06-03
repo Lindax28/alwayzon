@@ -12,6 +12,10 @@ class LoginForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleInput(type) {
     return e => {
       this.setState({[type]: e.currentTarget.value})
@@ -34,22 +38,24 @@ class LoginForm extends React.Component {
 
   render() {
     return(
-      <main className="login-form">
-        <h1>Sign-In</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label>Email
+      <main className="login-page">
+        <form className="login-form" onSubmit={this.handleSubmit}>
+          <h1>Sign-In</h1>
+          <label>Email<br></br>
             <input type="text" value={this.state.email} onChange={this.handleInput("email")} className="login-input"/>
           </label>
-          <label>Password
+          <label>Password<br></br>
             <input type="password" value={this.state.password} onChange={this.handleInput("password")} className="login-input"/>
           </label>
-          {this.renderErrors()}
-          <button type="submit" className="login-button">Sign-In</button>
+          <p className="login-errors">{this.renderErrors()}</p>
+          <button type="submit" className="login-button login-submit">Sign-In</button>
         </form>
-        
-        <div>
-          <p>New to Alwayzon?</p>
-          <Link to="/signup">Create your Alwayzon account</Link>
+
+        <div className="login-to-signup">
+          <h3><span>New to Alwayzon?</span></h3>
+          <Link to="/signup">
+            <button type="button" className="redirect-signup">Create your Alwayzon account</button>
+          </Link>
         </div>
       </main>
     );
