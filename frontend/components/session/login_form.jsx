@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   componentWillUnmount() {

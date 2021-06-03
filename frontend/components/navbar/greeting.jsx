@@ -7,7 +7,7 @@ const Greeting = (props) => {
     <div className="greeting">
       <Link className="greeting-button" to="/">
         <p className="nav-small">Hello, {props.currentUser.firstName}</p>
-        <h2>Account&nbsp; 
+        <h2 className="bold space-above">Account&nbsp; 
         <GoTriangleDown fill="gray" className="dropdown-arrow"/></h2>
       </Link>
       <nav className="login-flyout">

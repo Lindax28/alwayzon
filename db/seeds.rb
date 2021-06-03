@@ -10,6 +10,6 @@ ApplicationRecord.transaction do
 
     User.destroy_all
 
-    demo_user = User.create!(first_name: "demo-user", last_name: "demo-user", email: "demo-user@email.com", password: "password")
+    demo_user = User.create!(first_name: "Demo User", last_name: "Demo User", email: "demo-user@email.com", password: "password")
 
 end

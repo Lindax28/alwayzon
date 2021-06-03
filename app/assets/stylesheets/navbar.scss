@@ -143,7 +143,7 @@
 .flag {
   display: relative;
   margin-top: 0.2em;
-  padding: 7px;
+  padding: 7px 7px 7px 10px;
   border: 1px solid $almost-black;
   img {
     width: 1.4em;
@@ -166,7 +166,7 @@
   background-color: white;
   border: 1px solid gray;
   top: 3.6em;
-  right: 20.5em;
+  right: 21.5em;
   cursor: default;
   height: 3em;
   width: 10em;
@@ -208,6 +208,10 @@
   }
 }
 
+.space-above {
+  margin-top: 0.25em;
+}
+
 .greeting-button {
   text-decoration: none;
   color: white;
@@ -236,8 +240,8 @@
   position: absolute;
   border: 1px solid gray;
   padding: 10px;
-  top: 3em;
-  right: 7.2em;
+  top: 3.1em;
+  right: 8.4em;
   border-radius: 0.2em;
   background-color: white;
   * {
