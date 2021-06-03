@@ -4,16 +4,16 @@ import { CgShoppingCart } from 'react-icons/Cg';
 
 const Cart = (props) => {
   const loggedIn = () => (
-    <Link to="/cart">
-      <CgShoppingCart />
-      <span>Cart</span>
+    <Link to="/cart" className="cart bold">
+      <CgShoppingCart className="cart-icon"/>
+      <span>&nbsp;Cart</span>
     </Link>
   );
 
   const loggedOut = () => (
-    <Link to="/login">
-      <CgShoppingCart />
-      <span>Cart</span>
+    <Link to="/login" className="cart bold">
+      <CgShoppingCart className="cart-icon" />
+      <span>&nbsp;Cart</span>
     </Link>
   );
 

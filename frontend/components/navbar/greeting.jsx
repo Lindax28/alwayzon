@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { GoTriangleDown } from 'react-icons/Go';
 
 const Greeting = (props) => {
   const loggedIn = () => (
-    <div className="logged-in-greeting">
-      <div>
-        <h3>Hello, {props.currentUser.firstName}</h3>
-        <h2>Account</h2>
+    <div className="greeting">
+      <div className="greeting-button">
+        <p className="nav-small">Hello, {props.currentUser.firstName}</p>
+        <h2>Account&nbsp; 
+        <GoTriangleDown fill="gray" className="dropdown-arrow"/></h2>
       </div>
-      <nav className="nav-flyout">
+      <nav className="login-flyout">
         <h2>Your Account</h2>
         <ul>
           <li>Account</li>
@@ -19,14 +21,15 @@ const Greeting = (props) => {
   )
 
   const loggedOut = () => (
-    <div className="logged-out-greeting">
-      <Link to="/login">
-        <h3>Hello, Sign In</h3>
-        <h2>Account</h2>
+    <div className="greeting">
+      <Link className="greeting-button" to="/login">
+        <p className="nav-small">Hello, Sign In</p>
+        <h2 className="bold">Account&nbsp;
+        <GoTriangleDown fill="gray" className="dropdown-arrow"/></h2>
       </Link>
-      <nav className="nav-flyout">
-        <Link to="/login">Sign in</Link>
-        <div>
+      <nav className="login-flyout">
+        <Link to="/login" className="login-button">Sign in</Link>
+        <div id="small-msg">
           New customer? <Link to="/signup">Start here.</Link>
         </div>
       </nav>

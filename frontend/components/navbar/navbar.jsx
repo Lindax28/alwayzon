@@ -4,16 +4,19 @@ import Logo from './logo';
 import Address from './address';
 import GreetingContainer from './greeting_container';
 import CartContainer from './cart_container';
-
+import Flag from './flag';
+import SearchbarContainer from './searchbar_container'
 
 const Navbar = () => {
   return(
-    <div className="navbar">
+    <nav className="navbar">
       <Logo />
       <Address />
+      <SearchbarContainer/>
+      <Flag />
       <GreetingContainer />
       <CartContainer />
-    </div>
+    </nav>
   )
 };
 

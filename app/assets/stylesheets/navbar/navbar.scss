@@ -1,0 +1,210 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #131921;
+  font-size: 0.6em;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  height: 2rem;
+}
+
+.address {
+  color: white;
+  margin: 2px;
+  padding: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border: 1px solid #131921;
+  &:hover {
+    border: 1px solid gray;
+    cursor: pointer;
+  }
+}
+
+.greeting {
+  margin: 2px;
+  padding: 0.4em 0.9em 0.5em 1em;
+  border: 1px solid #131921;
+  &:hover {
+    border: 1px solid gray;
+  }
+}
+
+.greeting-button {
+  text-decoration: none;
+  color: white;
+}
+
+.cart {
+  text-decoration: none;
+  color: white;
+  margin: 0.2em;
+  padding: 0.8em;
+  padding-top: 0.5em;
+  border: 1px solid #131921;
+  &:hover {
+    border: 1px solid gray;
+  }
+}
+
+.logo {
+  img {
+    width: 7em;
+    height: 3em;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    margin: 0.1em;
+    border: 1px solid #131921;
+  }
+  :hover {
+    border: 1px solid gray;
+  }
+}
+
+.login-button {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(#ffdb82, #f0bf43);
+  border: 1px solid gray;
+  padding: 0.4em;
+  border: 0.1em solid gray;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.2em;
+  text-align: center;
+  transition: all 0.2s;
+  width: 12em;
+  font-size: 9px;
+  margin: 2px;
+  margin-bottom: 5px;
+    &:hover {
+      background: linear-gradient(#ffc63b, #e8b22a);
+    }
+}
+
+.login-flyout {
+  display: none;
+  position: absolute;
+  border: 1px solid gray;
+  padding: 10px;
+  top: 29px;
+  right: 67px;
+  border-radius: 0.2em;
+  background-color: white;
+  * {
+    text-align: center;
+  }
+  &:after {
+  content: "";
+  position:absolute;
+  margin-top:-6px;
+  margin-left:-5px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid white;
+  right: 20px; 
+  top: 0px;
+  }
+}
+
+.greeting:hover .login-flyout{
+  display: block;
+}
+
+input {
+  width: 36rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.cart-icon {
+  font-size: 1rem;
+}
+
+.nav-small {
+  font-size: 8px;
+}
+
+#small-msg {
+  font-size: 8px;
+  margin-top: 0.5em;
+}
+
+.flag {
+  margin-top: 0.2em;
+  padding: 7px;
+  border: 1px solid #131921;
+  img {
+    width: 1.4em;
+    height: 1em;
+  }
+  .dropdown-arrow {
+    margin-left: 0.2em;
+  }
+  &:hover {
+    cursor: pointer;
+    border: 1px solid gray;
+  }
+}
+
+.flag:hover .language {
+  display: block;
+}
+
+.language {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid gray;
+  top: 28px;
+  right: 170px;
+  cursor: default;
+  height: 3em;
+  width: 10em;
+  border-radius: 0.2em;
+  padding: 10px;
+  :last-child {
+    margin-left: 1em;
+  }
+  &:after {
+  content: "";
+  position:absolute;
+  margin-top:-6px;
+  margin-left:-5px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid white;
+  right: 8px; 
+  top: 0px;
+  }
+}
+
+.searchbar {
+  position: relative;
+  display: flex;
+  width: 65%;
+  top: 10%;
+  
+}
+
+.search-input {
+  width: 100%;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 15px;
+  // border: 3px solid #131921;
+  &:focus {
+    // border: 1px solid orange;
+  }
+}
+
+.search-button {
+  width: 30px;
+  background: orange;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
