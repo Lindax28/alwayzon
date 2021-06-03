@@ -70,7 +70,7 @@ class SignupForm extends React.Component {
           <label>Re-enter password
             <input type="password" value={this.state.confirmPassword} onChange={this.handleInput("confirmPassword")} className="signup-input"/>
           </label>
-          <p className="login-errors">{this.renderErrors()}</p>
+          <div className="login-errors">{this.renderErrors()}</div>
           <button type="submit" className="login-button signup-button">Create your Alwayzon account</button>
           <p id="signup-conditions">By creating an account, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
         </form>
