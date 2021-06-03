@@ -5,10 +5,13 @@ import { LocationIcon } from '../../custom_icons/location_icon'
 
 const Address = () => {
   return(
-      <ul className="address">
-        <li className="nav-small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello</li>
-        <li className="bold"><LocationIcon/>&nbsp;Select your address</li>
-      </ul>
+      <div className="address">
+        <p className="nav-small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello</p>
+        <p className="bold"><LocationIcon/>&nbsp;Select your address</p>
+        <div className="location">
+          <input type="text" value="San Francisco"/>
+        </div>
+      </div>
   )
 };
 
