@@ -4,7 +4,7 @@
   justify-content: space-between;
   background-color: $almost-black;
   font-size: 0.6em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $default-font;
   padding-right: 1rem;
   padding-left: 1rem;
   height: 2rem;
@@ -228,6 +228,7 @@
   margin-bottom: 5px;
     &:hover {
       background: linear-gradient(#ffc63b, #e8b22a);
+      cursor: pointer;
     }
 }
 

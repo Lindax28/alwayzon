@@ -17,4 +17,8 @@
  @import "reset.scss";
 
  $almost-black: #131921;
- @import "navbar/navbar.scss";
+ $default-font: Arial, Helvetica, sans-serif;
+ @import "navbar.scss";
+
+ @import "login.scss";
+ @import "signup.scss";
