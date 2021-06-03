@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AiOutlineSearch } from 'react-icons/Ai';
-import { GoTriangleDown } from 'react-icons/Go';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { GoTriangleDown } from 'react-icons/go';
 
 const Searchbar = () => (
   <div className="searchbar">

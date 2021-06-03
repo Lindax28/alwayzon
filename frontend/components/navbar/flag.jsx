@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoTriangleDown } from 'react-icons/Go';
-import { IoMdRadioButtonOn } from 'react-icons/Io';
+import { IoMdRadioButtonOn } from 'react-icons/io';
 
 const Flag = () => (
   <div className="flag">

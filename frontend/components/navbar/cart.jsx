@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CgShoppingCart } from 'react-icons/Cg';
+import { CgShoppingCart } from 'react-icons/cg';
 
 const Cart = (props) => {
   const loggedIn = () => (
