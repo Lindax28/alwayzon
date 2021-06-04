@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import SignupForm from './signup_form';
-import { signup, clearErrors } from '../../actions/session_actions';
+import { login, signup, clearErrors } from '../../actions/session_actions';
 
 const mapState = ({errors}) => ({
   errors: errors.signup
 });
 
 const mapDispatch = dispatch => ({
-  signup: (user) => dispatch(signup(user)),
+  login: user => dispatch(login(user)),
+  signup: user => dispatch(signup(user)),
   clearErrors: () => dispatch(clearErrors())
 });
 

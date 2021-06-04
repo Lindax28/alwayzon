@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.passwordMatch = this.passwordMatch.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   componentWillUnmount() {
@@ -40,6 +41,12 @@ class SignupForm extends React.Component {
 
   passwordMatch() {
     return this.state.password === this.state.confirmPassword
+  }
+
+  loginDemo() {
+    this.setState({firstName: "Demo", lastName: "User", email: "demo-user@email.com", password: "password", confirmPassword: "password"})
+    const demo = {email: "demo-user@email.com", password: "password"}
+    this.props.login(demo);
   }
 
   renderErrors() {
@@ -74,7 +81,7 @@ class SignupForm extends React.Component {
           </label>
           <div className="auth-errors">{this.renderErrors()}</div>
           <button type="submit" className="login-button signup-button glow-on-click">Create your Alwayzon account</button>
-          <button type="button" className="login-submit demo-button demo-glow-on-click">Sign-In as demo user</button>
+          <button type="button" onClick={this.loginDemo} className="login-submit demo-button demo-glow-on-click">Sign-In as demo user</button>
           <p id="signup-conditions">By creating an account, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
         </form>
 
