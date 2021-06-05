@@ -4,6 +4,7 @@ import Navbar from './navbar/navbar';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ReviewFormContainer from './review/review_form_container';
+import ProductIndexContainer from './product/product_index_container';
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
       <Route path="/signup"><AuthRoute path="/signup" component={SignupFormContainer} /></Route>
       <Route path="/*"><Navbar /></Route>
     </Switch>
+    <Route exact path="/"><ProductIndexContainer /></Route>
     <Route path="/products/review"><ReviewFormContainer /></Route>
   </div>
 );

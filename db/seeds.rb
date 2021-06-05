@@ -12,4 +12,5 @@ ApplicationRecord.transaction do
 
     demo_user = User.create!(first_name: "Demo User", last_name: "Demo User", email: "demo-user@email.com", password: "password")
 
+    product1 = Product.create!(name: "Hand cream", description: "Luxurious hand cream with a tiny cap to prove it." , category: "beauty and skincare" , price: 12.50)
 end

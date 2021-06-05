@@ -8,7 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+  <script>window.darkLogo = "<%= image_url('dark-logo.jpg') %>"</script>
+  <script>window.lightLogo = "<%= image_url("light-logo.jpg") %>"</script>
+  <script>window.usFlag = "<%= image_url("usflag.jpeg") %>"</script>
   <body>
     <%= yield %>
   </body>

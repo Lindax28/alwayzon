@@ -21,11 +21,3 @@ export const logout = () => (
   })
 );
 
-export const saveReview = review => (
-  $.ajax({
-    method: "POST",
-    url: "/api/reviews",
-    data: review
-  })
-);
-

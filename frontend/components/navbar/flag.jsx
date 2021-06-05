@@ -4,7 +4,7 @@ import { IoMdRadioButtonOn } from 'react-icons/io';
 
 const Flag = () => (
   <div className="flag">
-    <img src="/usflag.jpeg" alt="regional language" />
+    <img src={window.usFlag} alt="regional language" />
     <GoTriangleDown fill="gray" className="dropdown-arrow"/>
     <div className="language">
       <span>English - EN</span>

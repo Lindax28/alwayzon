@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :cart_items
   has_many :products,
     through: :cart_items,
-    soruce: :products
+    source: :products
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

@@ -1,21 +1,14 @@
 import * as APIUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_SIGNUP_ERRORS = 'RECEIVE_SIGNUP_ERRORS';
 export const RECEIVE_LOGIN_ERRORS = 'RECEIVE_LOGIN_ERRORS';
-export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 
 export const receiveCurrentUser = currentUser => ({
-  type: RECEIVE_CURRENT_USER,
+  type: RECEIVE_PRODUCTS,
   currentUser
-});
-
-export const receiveReview = review => ({
-  type: RECEIVE_REVIEW,
-  review
 });
 
 export const receiveSignupErrors = errors => ({
@@ -25,11 +18,6 @@ export const receiveSignupErrors = errors => ({
 
 export const receiveLoginErrors = errors => ({
   type: RECEIVE_LOGIN_ERRORS,
-  errors
-});
-
-export const receiveReviewErrors = errors => ({
-  type: RECEIVE_REVIEW_ERRORS,
   errors
 });
 
@@ -53,6 +41,4 @@ export const logout = () => dispatch => {
   APIUtil.logout().then(user => dispatch(logoutCurrentUser()))
 };
 
-export const postReview = review => dispatch => {
-  APIUtil.saveReview(review).then(review => dispatch(receiveReview(review)), error => dispatch(receiveReviewErrors(error.responseJSON)))
-}
+
