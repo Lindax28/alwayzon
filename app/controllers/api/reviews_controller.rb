@@ -2,7 +2,7 @@ class Api::ReviewsController < ApplicationController
   before_action :require_login, only: [:create]
 
   def index
-    product = Product.find(params[:product][:id]))
+    product = Product.find(params[:product][:id])
     if product
       @reviews = product.reviews
       render :index
