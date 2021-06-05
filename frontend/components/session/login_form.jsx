@@ -46,9 +46,9 @@ class LoginForm extends React.Component {
 
   render() {
     return(
-      <main className="login-page">
+      <main className="auth-page">
         <LightLogo />
-        <form className="login-form" onSubmit={this.handleSubmit}>
+        <form className="auth-form" onSubmit={this.handleSubmit}>
           <h1>Sign-In</h1>
           <label>Email<br></br>
             <input type="text" value={this.state.email} onChange={this.handleInput("email")} className="login-input"/>
@@ -57,9 +57,9 @@ class LoginForm extends React.Component {
             <input type="password" value={this.state.password} onChange={this.handleInput("password")} className="login-input"/>
           </label>
           <div className="auth-errors">{this.renderErrors()}</div>
-          <button type="submit" className="login-button login-submit glow-on-click">Sign-In</button>
-          <button type="button" onClick={this.loginDemo} className="login-submit demo-button demo-glow-on-click">Sign-In as demo user</button>
-          <p id="signup-conditions">By continuing, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
+          <button type="submit" className="auth-button submit-button glow-on-click">Sign-In</button>
+          <button type="button" onClick={this.loginDemo} className="submit-button demo-button demo-glow-on-click">Sign-In as demo user</button>
+          <p id="auth-conditions">By continuing, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
         </form>
 
         <div className="login-to-signup">

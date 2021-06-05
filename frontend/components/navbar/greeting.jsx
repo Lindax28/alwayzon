@@ -5,7 +5,7 @@ import { GoTriangleDown } from 'react-icons/go';
 const Greeting = (props) => {
   const loggedIn = () => (
     <div className="greeting">
-      <Link className="greeting-button" to="/">
+      <Link className="greeting-text" to="/">
         <p className="nav-small">Hello, {props.currentUser.firstName}</p>
         <h2 className="bold space-above">Account&nbsp; 
         <GoTriangleDown fill="gray" className="dropdown-arrow"/></h2>
@@ -22,9 +22,9 @@ const Greeting = (props) => {
 
   const loggedOut = () => (
     <div className="greeting">
-      <Link className="greeting-button" to="/login">
+      <Link className="greeting-text" to="/login">
         <p className="nav-small">Hello, Sign In</p>
-        <h2 className="bold">Account&nbsp;
+        <h2 className="bold space-above">Account&nbsp;
         <GoTriangleDown fill="gray" className="dropdown-arrow"/></h2>
       </Link>
       <nav className="login-flyout">

@@ -60,9 +60,9 @@ class SignupForm extends React.Component {
 
   render() {
     return(
-      <main className="signup-page">
+      <main className="auth-page">
         <LightLogo />
-        <form onSubmit={this.handleSubmit} className="signup-form">
+        <form onSubmit={this.handleSubmit} className="auth-form">
           <h1>Create account</h1>
           <label>First name
             <input type="text" value={this.state.firstName} onChange={this.handleInput("firstName")} className="signup-input"/>
@@ -80,12 +80,12 @@ class SignupForm extends React.Component {
             <input type="password" value={this.state.confirmPassword} onChange={this.handleInput("confirmPassword")} className="signup-input"/>
           </label>
           <div className="auth-errors">{this.renderErrors()}</div>
-          <button type="submit" className="login-button signup-button glow-on-click">Create your Alwayzon account</button>
-          <button type="button" onClick={this.loginDemo} className="login-submit demo-button demo-glow-on-click">Sign-In as demo user</button>
-          <p id="signup-conditions">By creating an account, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
+          <button type="submit" className="submit-button auth-button glow-on-click">Create your Alwayzon account</button>
+          <button type="button" onClick={this.loginDemo} className="submit-button demo-button demo-glow-on-click">Sign-In as demo user</button>
+          <p id="auth-conditions">By creating an account, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
         </form>
 
-        <div className="signup-to-login">
+        <div className="redirect-to-login">
           <span>Already have an account?</span>
           <span><Link className="login-link" to="/login">Sign-In</Link></span>
         </div>
