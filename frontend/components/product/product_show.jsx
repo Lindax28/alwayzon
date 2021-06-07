@@ -46,7 +46,7 @@ class ProductShow extends React.Component {
           </section>
           <section>
             <h1>{product.name}</h1>
-            <div>Rating: {product.average_rating || 'No Reviews yet'}</div>
+            <div>Rating: {product.averageRating || 'No Reviews yet'}</div>
             <div>Price: {product.price}</div>
             <p>{product.description}</p>
           </section>
@@ -70,8 +70,15 @@ class ProductShow extends React.Component {
         <section className="reviews">
           <section className="review-ratings">
             <h2>Customer reviews</h2>
-            <div>Rating: {product.average_rating || 'No Reviews yet'}</div>
+            <div>Rating: {product.averageRating || 'No Reviews yet'}</div>
             <p>{reviews.length} global {reviews.length === 1 ? "rating" : "ratings"}</p>
+            <h3>Review this product</h3>
+            <p>Share your thoughts with other customers</p>
+            <hr></hr>
+            <Link to={`/products/${product.id}/review`}>
+              <button type="button" className="redirect-signup glow-on-click">Write a customer review</button>
+            </Link>
+            <hr></hr>
           </section>
           <section className="review-details">
             <ul>

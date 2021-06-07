@@ -4,7 +4,6 @@ export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const CLEAR_PRODUCTS = 'CLEAR_PRODUCTS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
-export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 export const receiveProduct = ({product, reviews, users}) => ({
   type: RECEIVE_PRODUCT,
@@ -22,16 +21,11 @@ export const clearProducts = () => ({
   type: CLEAR_PRODUCTS
 });
 
-export const receiveReview = ({review, average_rating, user}) => ({
+export const receiveReview = ({review, averageRating, user}) => ({
   type: RECEIVE_REVIEW,
   review,
-  average_rating,
+  averageRating,
   user
-});
-
-export const receiveReviewErrors = errors => ({
-  type: RECEIVE_REVIEW_ERRORS,
-  errors
 });
 
 export const fetchProduct = productId => dispatch => {
@@ -43,5 +37,5 @@ export const fetchProducts = search => dispatch => {
 };
 
 export const postReview = review => dispatch => {
-  APIUtil.saveReview(review).then(review => dispatch(receiveReview(review)), error => dispatch(receiveReviewErrors(error.responseJSON)))
+  APIUtil.saveReview(review).then(review => dispatch(receiveReview(review)))
 };

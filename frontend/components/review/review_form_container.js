@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import ReviewForm from './review_form';
-import { clearErrors } from '../../actions/session_actions';
-import { postReview } from '../../actions/product_actions';
+import { postReview, fetchProduct } from '../../actions/product_actions';
+import { selectProduct } from '../../reducers/selectors';
 
-const mapState = ({errors, session}, ownProps) => ({
-  errors: errors.review,
+const mapState = ({entities, session}, ownProps) => ({
   userId: session.id,
-  product: ownProps.product
+  product: selectProduct(entities, ownProps.match.params.productId)
 });
 
 const mapDispatch = dispatch => ({
   postReview: review => dispatch(postReview(review)),
-  clearErrors: () => dispatch(clearErrors())
+  fetchProduct: productId => dispatch(fetchProduct(productId))
 });
 
-export default connect(mapState, mapDispatch)(ReviewForm);
+export default withRouter(connect(mapState, mapDispatch)(ReviewForm));
