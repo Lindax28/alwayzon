@@ -1,4 +1,4 @@
-import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS, RECEIVE_REVIEW } from '../actions/product_actions';
+import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS, RECEIVE_REVIEW, CLEAR_PRODUCTS } from '../actions/product_actions';
 
 const productsReducer = (state={}, action) => {
   Object.freeze(state);
@@ -13,6 +13,8 @@ const productsReducer = (state={}, action) => {
       newState[review.product_id].reviewIds.push(review.id);
       newState[review.product_id].average_rating = average_rating;
       return newState;
+    case CLEAR_PRODUCTS:
+      return {};
     default:
       return state;
   }

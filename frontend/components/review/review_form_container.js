@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ReviewForm from './review_form';
-import { clearErrors, postReview } from '../../actions/session_actions';
+import { clearErrors } from '../../actions/session_actions';
+import { postReview } from '../../actions/product_actions';
 
 const mapState = ({errors, session}, ownProps) => ({
   errors: errors.review,

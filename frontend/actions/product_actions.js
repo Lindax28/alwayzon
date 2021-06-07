@@ -2,6 +2,7 @@ import * as APIUtil from '../util/product_api_util';
 
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
+export const CLEAR_PRODUCTS = 'CLEAR_PRODUCTS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
@@ -15,6 +16,10 @@ export const receiveProduct = ({product, reviews, users}) => ({
 export const receiveProducts = products => ({
   type: RECEIVE_PRODUCTS,
   products
+});
+
+export const clearProducts = () => ({
+  type: CLEAR_PRODUCTS
 });
 
 export const receiveReview = ({review, average_rating, user}) => ({
@@ -33,8 +38,8 @@ export const fetchProduct = productId => dispatch => {
   APIUtil.getProduct(productId).then(payload => dispatch(receiveProduct(payload)))
 };
 
-export const fetchProducts = filters => dispatch => {
-  APIUtil.getProducts(filters).then(products => dispatch(receiveProducts(products)))
+export const fetchProducts = search => dispatch => {
+  APIUtil.getProducts(search).then(products => dispatch(receiveProducts(products)))
 };
 
 export const postReview = review => dispatch => {

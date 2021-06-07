@@ -1,6 +1,6 @@
 json.product do
   json.extract! @product, :id, :name, :description, :category, :price
-  json.picture_url url_for(@product.photo)
+  json.imageUrl url_for(@product.photo)
   json.reviewIds @product.reviews.pluck(:id)
 end
 

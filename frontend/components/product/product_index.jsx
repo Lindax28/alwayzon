@@ -6,8 +6,8 @@ class ProductIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchProducts({});
+  componentWillUnmount() {
+    this.props.clearProducts();
   }
 
   render() {

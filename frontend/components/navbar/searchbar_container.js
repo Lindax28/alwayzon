@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Searchbar from './searchbar';
-import { logout } from '../../actions/session_actions';
-
-const mapState = state => ({
-});
+import { fetchProducts } from '../../actions/product_actions';
 
 const mapDispatch = dispatch => ({
+  fetchProducts: search => dispatch(fetchProducts(search))
 });
 
-export default connect(mapState, mapDispatch)(Searchbar);
+export default withRouter(connect(null, mapDispatch)(Searchbar));

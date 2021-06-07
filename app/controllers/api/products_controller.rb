@@ -1,7 +1,14 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = []
+    if params[:search]
+      search_params.each do |keyword|
+        @products.concat(Product.where(":tag = ANY (keywords)", tag: keyword.downcase))
+      end
+    elsif params[:category]
+      @products = Product.where(category: category_params)
+    end
     render :index
   end
 
@@ -12,7 +19,12 @@ class Api::ProductsController < ApplicationController
 
   private
 
-  def product_params
-    params.require(:product).permit(:name, :description, :category, :price)
+  def search_params
+    params[:search].split(' ')
+  end
+
+  def category_params
+    params[:category]
   end
 end
+
