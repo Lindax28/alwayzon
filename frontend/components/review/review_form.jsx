@@ -5,8 +5,9 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      complete: false,
       userId: this.props.userId,
-      productId: this.props.product.id,
+      productId: parseInt(this.props.match.params.productId),
       rating: '',
       title: '',
       body: ''
@@ -17,6 +18,7 @@ class ReviewForm extends React.Component {
   }
 
    componentWillMount() {
+     console.log(this.state)
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
@@ -27,7 +29,8 @@ class ReviewForm extends React.Component {
   }
 
   formComplete() {
-    return this.state.rating.trim() && this.state.title.trim() && this.state.body.trim()
+    console.log(this.state)
+    return this.state.rating.trim() && this.state.title.trim() && this.state.body.trim();
   }
   
   handleInput(type) {
@@ -36,12 +39,21 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const state = Object.assign({}, this.state);
+    const state = {
+      user_id: this.state.userId,
+      product_id: this.state.productId,
+      rating: parseInt(this.state.rating),
+      title: this.state.title,
+      body: this.state.body
+    }
     this.props.postReview(state);
-    <Redirect to={`/products/${this.state.productId}`}/>
+    this.setState({complete: true});
   }
 
   render() {
+    if(this.state.complete)  {
+      return <Redirect to={`/products/${this.state.productId}`}/>
+    }
     return(
       <main className="review-page">
         <form onSubmit={this.handleSubmit}>

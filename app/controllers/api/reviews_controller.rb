@@ -12,7 +12,14 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
-    @review = current_user.reviews.new(review_params)
+    @review = Review.find_by(user_id: params[:review][:user_id].to_i, product_id: params[:review][:product_id].to_i)
+    if @review
+      @review.title = params[:review][:title]
+      @review.body = params[:review][:body]
+      @review.rating = params[:review][:rating]
+    else
+      @review = current_user.reviews.new(review_params)
+    end
 
     if @review.save
       render :show
