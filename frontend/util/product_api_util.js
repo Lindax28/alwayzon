@@ -13,9 +13,9 @@ export const getProduct = productId => (
   })
 );
 
-export const getProducts = search => (
+export const getProducts = (search, category) => (
   $.ajax({
     method: 'GET',
-    url: `/api/products?search=${search}`
+    url: `/api/products?search=${search}&category=${category}`
   })
 );

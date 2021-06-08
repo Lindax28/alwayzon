@@ -32,8 +32,8 @@ export const fetchProduct = productId => dispatch => {
   APIUtil.getProduct(productId).then(payload => dispatch(receiveProduct(payload)))
 };
 
-export const fetchProducts = search => dispatch => {
-  APIUtil.getProducts(search).then(products => dispatch(receiveProducts(products)))
+export const fetchProducts = (search, category) => dispatch => {
+  APIUtil.getProducts(search, category).then(products => dispatch(receiveProducts(products)))
 };
 
 export const postReview = review => dispatch => {

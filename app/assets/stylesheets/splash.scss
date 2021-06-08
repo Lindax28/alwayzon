@@ -30,3 +30,14 @@
   max-width: 78%;
   height: auto;
 }
+
+.cards {
+  display: flex;
+  width: 40%;
+  .card {
+    margin: 3em;
+  }
+  img {
+   width: 100%; 
+  }
+}
