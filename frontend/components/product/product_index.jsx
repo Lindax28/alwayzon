@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductIndexItem from './product_index_item';
 import queryString from 'query-string';
+import { Link } from 'react-router-dom';
 
 class ProductIndex extends React.Component {
   constructor(props) {
@@ -21,13 +22,13 @@ class ProductIndex extends React.Component {
   render() {
     let products = this.props.products.map((product, idx) => <ProductIndexItem key={`product-${idx}`} product={product} />)
     return(
-      <main>
-        {/* <a id="top"></a> */}
+      <div>
+        {/* <div name="top2"></div> */}
         <ul className="product-index">
           { products.length === 0 ? <li>No results found. Try checking your spelling or use more general terms.</li> : products }
-          {/* <a className="back-to-top" href="#top">Back to top</a> */}
+          {/* <a className="back-to-top" href="#top2">Back to top</a> */}
         </ul>
-      </main>
+      </div>
     )
   }
 }

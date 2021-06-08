@@ -84,7 +84,7 @@
 .back-to-top {
   display: block;
   position: absolute;
-  top: 100%;
+  top: 110%;
   padding: 1.2em;
   background-color: $dark-gray;
   text-align: center;
@@ -92,7 +92,7 @@
   color: white;
   font-size: 1em;
   font-family: $default-font;
-  width: 100vw;
+  width: 99vw;
     margin-left: calc(-50vw + 50%);
   &:hover {
     background-color: $medium-gray;

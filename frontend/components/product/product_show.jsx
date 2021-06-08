@@ -39,30 +39,35 @@ class ProductShow extends React.Component {
     const hoursTilMidnight = Math.floor((midnight.getTime()-now.getTime())/3600/1000);
     const minutesTilMidnight = Math.floor((midnight.getTime()-now.getTime())/60/1000 - (60 * hoursTilMidnight));
     return(
-      <div>
+      <div className="product-show-page">
         <main className="product-info">
-          <section>
-            <img src={product.imageUrl} alt={product.name} width="100px" height="100px"/>
-          </section>
+          <img src={product.imageUrl} alt={product.name} width="100px" height="100px"/>
           <section>
             <h1>{product.name}</h1>
             <div>Rating: {product.averageRating || 'No Reviews yet'}</div>
-            <div>Price: ${parseFloat(product.price).toFixed(2)}</div>
-            <p>{product.description}</p>
+            <hr />
+            <div>Price: <span className="product-price">${parseFloat(product.price).toFixed(2)}</span> & FREE Returns</div>
+            <hr />
+            <h3 className="bold">About this item</h3>
+            <li>{product.description}</li>
           </section>
           <aside>
-            <h3>${parseFloat(product.price).toFixed(2)}</h3>
+            <h3><span className="product-price">${parseFloat(product.price).toFixed(2)}</span></h3>
             <div>& FREE Returns</div>
-            <p>FREE delivery: {`${slowDay}, ${slowMonth} ${slowDate}`}</p>
+            <br />
+            <p>FREE delivery: <span className="bold">{`${slowDay}, ${slowMonth} ${slowDate}`}</span></p>
+            <br />
             <div>
-              <div>Fastest delivery: {`${fastDay}, ${fastMonth} ${fastDate}`}</div>
-              <div>Order within {hoursTilMidnight} {hoursTilMidnight === 1 ? "hour" : "hours"} and {minutesTilMidnight} mins</div>
+              <div className="line-height">
+                Fastest delivery: <span className="bold">{`${fastDay}, ${fastMonth} ${fastDate}`}</span><br></br>
+                Order within {hoursTilMidnight} {hoursTilMidnight === 1 ? "hour" : "hours"} and {minutesTilMidnight} mins
+              </div>
             </div>
-            <p>In Stock</p>
-            <Link to="/cart" className="submit-button">Add to Cart</Link>
-            <div>
-              <div>Ships from Alwayzon.com</div>
-              <div>Sold by Alwayzon.com</div>
+            <p className="in-stock">In Stock.</p>
+            <Link to="/cart" className="add-to-cart">Add to Cart</Link>
+            <div className="shipped-by line-height">
+              <div><span className="gray">Ships from</span> &nbsp;&nbsp;Alwayzon.com</div>
+              <div><span className="gray">Sold by</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alwayzon.com</div>
             </div>
             <p>Return policy: This item is returnable</p>
           </aside>
