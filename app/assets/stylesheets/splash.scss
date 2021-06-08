@@ -66,9 +66,25 @@
   }
 }
 
+// .back-to-top {
+//   display: block;
+//   margin-top: 30em;
+//   padding: 1.2em;
+//   background-color: $dark-gray;
+//   text-align: center;
+//   text-decoration: none;
+//   color: white;
+//   font-size: 1em;
+//   font-family: $default-font;
+//   &:hover {
+//     background-color: $medium-gray;
+//   }
+// }
+
 .back-to-top {
   display: block;
-  margin-top: 30em;
+  position: absolute;
+  top: 100%;
   padding: 1.2em;
   background-color: $dark-gray;
   text-align: center;
@@ -76,6 +92,8 @@
   color: white;
   font-size: 1em;
   font-family: $default-font;
+  width: 100vw;
+    margin-left: calc(-50vw + 50%);
   &:hover {
     background-color: $medium-gray;
   }

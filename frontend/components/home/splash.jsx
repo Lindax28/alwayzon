@@ -46,10 +46,8 @@ class Splash extends React.Component {
           <h2>Sports and Outdoors</h2>
           <img src={window.sportsandoutdoors} alt="Sports and Outdoors" />
         </Link>
-      </section>
-      <footer>
         <a className="back-to-top" href="#">Back to top</a>
-      </footer>
+      </section>
     </main>
   )
   }

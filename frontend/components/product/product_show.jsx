@@ -47,11 +47,11 @@ class ProductShow extends React.Component {
           <section>
             <h1>{product.name}</h1>
             <div>Rating: {product.averageRating || 'No Reviews yet'}</div>
-            <div>Price: {product.price}</div>
+            <div>Price: ${parseFloat(product.price).toFixed(2)}</div>
             <p>{product.description}</p>
           </section>
           <aside>
-            <h3>{product.price}</h3>
+            <h3>${parseFloat(product.price).toFixed(2)}</h3>
             <div>& FREE Returns</div>
             <p>FREE delivery: {`${slowDay}, ${slowMonth} ${slowDate}`}</p>
             <div>
