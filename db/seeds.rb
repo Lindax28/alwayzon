@@ -102,22 +102,19 @@ ApplicationRecord.transaction do
 
   crayons = Product.create!(name: "Crayons", description: "Colorful crayons for the artist in everyone! Now comes in multiple colors.", category: schooloffice, price: 4.50, keywords: ["school", "crayons", "crayon", "color", "coloring", "colorful", "art", "artist", "kids", "supplies"])
   crayons.photo.attach(io: File.open("db/seed_images/hello-i-m-nik-m8qFTh2qcTQ-unsplash.jpg"), filename: "crayons.jpg")
-
-  pet = "Pet Supplies"
-
-  dog_bags = Product.create!(name: "Dog Poopy Bags", description: "Make poopy time less poopy with these cute, scented doggie poo bags.", category: pet, price: 11.20, keywords: ["dog", "pet", "poop", "bag", "bags", "animal", "doggie", "baggie"])
-  dog_bags.photo.attach(io: File.open("db/seed_images/aldo-delara-hztee92Tlgk-unsplash.jpg"), filename: "dogbags.jpg")
-
+  
   electronics = "Electronics"
-
+  
   airpods = Product.create!(name: "Airpods", description: "Big sound from tiny earbuds.", category: electronics, price: 199.99, keywords: ["music", "headphones", "earbuds", "airpods", "sound", "electronics", "apple", "earphones", "song", "songs"])
   airpods.photo.attach(io: File.open("db/seed_images/insung-yoon-mru38VH7tII-unsplash.jpg"), filename: "airpods.jpg")
-
+  
   sportsoutdoors = "Sports and Outdoors"
-
+  
   bike_helmet = Product.create!(name: "Bike helmet", description: "Protect your noggin. Stylish and crafted to fit normal-sized heads.", category: sportsoutdoors, price: 29.99, keywords: ["helmet", "bike", "bicycle", "motorcycle", "gear", "sports", "outdoors", "safety", "protection", "head"])
   bike_helmet.photo.attach(io: File.open("db/seed_images/cobi-krumholz-UdtaDdyu1O0-unsplash.jpg"), filename: "bikehelmet.jpg")
-
+  
+  dog_bags = Product.create!(name: "Dog Poopy Bags", description: "Make poopy time less poopy with these cute, scented doggie poo bags.", category: pet, price: 11.20, keywords: ["dog", "pet", "poop", "bag", "bags", "animal", "doggie", "baggie"])
+  dog_bags.photo.attach(io: File.open("db/seed_images/aldo-delara-hztee92Tlgk-unsplash.jpg"), filename: "dogbags.jpg")
 
   
 
