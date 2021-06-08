@@ -113,7 +113,7 @@ ApplicationRecord.transaction do
   bike_helmet = Product.create!(name: "Bike helmet", description: "Protect your noggin. Stylish and crafted to fit normal-sized heads.", category: sportsoutdoors, price: 29.99, keywords: ["helmet", "bike", "bicycle", "motorcycle", "gear", "sports", "outdoors", "safety", "protection", "head"])
   bike_helmet.photo.attach(io: File.open("db/seed_images/cobi-krumholz-UdtaDdyu1O0-unsplash.jpg"), filename: "bikehelmet.jpg")
   
-  dog_bags = Product.create!(name: "Dog Poopy Bags", description: "Make poopy time less poopy with these cute, scented doggie poo bags.", category: pet, price: 11.20, keywords: ["dog", "pet", "poop", "bag", "bags", "animal", "doggie", "baggie"])
+  dog_bags = Product.create!(name: "Dog Poopy Bags", description: "Make poopy time less poopy with these cute, scented doggie poo bags.", category: sportsoutdoors, price: 11.20, keywords: ["dog", "pet", "poop", "bag", "bags", "animal", "doggie", "baggie"])
   dog_bags.photo.attach(io: File.open("db/seed_images/aldo-delara-hztee92Tlgk-unsplash.jpg"), filename: "dogbags.jpg")
 
   

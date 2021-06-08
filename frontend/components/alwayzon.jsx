@@ -13,7 +13,8 @@ class Alwayzon extends React.Component {
   }
 
   render() {
-    return (<div>
+    return(
+    <div>
       <Navbar />
       <Switch>
         <Route exact path="/products/:productId"><ProductShowContainer /></Route>
