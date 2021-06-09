@@ -18,7 +18,6 @@ class ReviewForm extends React.Component {
   }
 
    componentWillMount() {
-     console.log(this.state)
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
@@ -29,7 +28,6 @@ class ReviewForm extends React.Component {
   }
 
   formComplete() {
-    console.log(this.state)
     return this.state.rating.trim() && this.state.title.trim() && this.state.body.trim();
   }
   
