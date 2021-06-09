@@ -4,6 +4,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import Alwayzon from './alwayzon';
 import { AuthRoute } from '../util/route_util';
+import Spinner from './home/spinner';
 
 const App = () => (
   <div>

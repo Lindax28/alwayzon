@@ -47,7 +47,7 @@ class ProductShow extends React.Component {
           <img src={product.imageUrl} alt={product.name} width="100px" height="100px"/>
           <section>
             <h1>{product.name}</h1>
-            <div>Rating: {product.averageRating || 'No Reviews yet'}</div>
+            <div>Rating: {product.averageRating ? parseFloat(product.averageRating).toFixed(1) : 'No Reviews yet'}</div>
             <hr />
             <div>Price: <span className="product-price">${parseFloat(product.price).toFixed(2)}</span> & FREE Returns</div>
             <hr />
@@ -78,7 +78,7 @@ class ProductShow extends React.Component {
         <section className="reviews">
           <section className="review-ratings">
             <h2>Customer reviews</h2><br></br>
-            <div>Rating: {product.averageRating ? `${product.averageRating} out of 5` : 'No Reviews yet'}</div><br></br>
+            <div>Rating: {product.averageRating ? `${parseFloat(product.averageRating).toFixed(1)} out of 5` : 'No Reviews yet'}</div><br></br>
             <p className="gray">{reviews.length} global {reviews.length === 1 ? "rating" : "ratings"}</p>
             <hr />
             <h3>Review this product</h3>

@@ -2,10 +2,12 @@ import React from 'react';
 import ProductIndexItem from './product_index_item';
 import queryString from 'query-string';
 import { Link } from 'react-router-dom';
+import Spinner from '../home/spinner';
 
 class ProductIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { loading: true };
   }
 
   componentWillUnmount() {
@@ -19,7 +21,17 @@ class ProductIndex extends React.Component {
     }
   }
 
+  // componentDidMount() {
+  //   setTimeout(function() { 
+  //     this.setState({loading: false})
+  // }.bind(this), 1000)
+  // }
+
   render() {
+    // if (this.state.loading) {
+    //   console.log("spinner")
+    //   return <Spinner />
+    // }
     let products = this.props.products.map((product, idx) => <ProductIndexItem key={`product-${idx}`} product={product} />)
     return(
       <div>

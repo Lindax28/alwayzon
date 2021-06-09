@@ -66,21 +66,6 @@
   }
 }
 
-// .back-to-top {
-//   display: block;
-//   margin-top: 30em;
-//   padding: 1.2em;
-//   background-color: $dark-gray;
-//   text-align: center;
-//   text-decoration: none;
-//   color: white;
-//   font-size: 1em;
-//   font-family: $default-font;
-//   &:hover {
-//     background-color: $medium-gray;
-//   }
-// }
-
 .back-to-top {
   display: block;
   position: absolute;
@@ -98,3 +83,17 @@
     background-color: $medium-gray;
   }
 }
+
+// .spinner {
+//   border: 16px solid #f3f3f3;
+//   border-top: 16px solid #3498db;
+//   border-radius: 50%;
+//   width: 120px;
+//   height: 120px;
+//   animation: spin 2s linear infinite;
+// }
+
+// @keyframes spin {
+//   0% { transform: rotate(0deg) }
+//   100% { transform: rotate(360deg) }
+// }
