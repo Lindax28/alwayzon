@@ -22,16 +22,20 @@ class ProductIndex extends React.Component {
   }
 
   // componentDidMount() {
-  //   setTimeout(function() { 
-  //     this.setState({loading: false})
-  // }.bind(this), 1000)
+  //   this.setState({loading: false})
   // }
 
+  componentDidMount() {
+    setTimeout(function() { 
+      this.setState({loading: false})
+  }.bind(this), 500)
+  }
+
   render() {
-    // if (this.state.loading) {
-    //   console.log("spinner")
-    //   return <Spinner />
-    // }
+    if (this.state.loading) {
+      console.log("spinner")
+      return <Spinner />
+    }
     let products = this.props.products.map((product, idx) => <ProductIndexItem key={`product-${idx}`} product={product} />)
     return(
       <div>
