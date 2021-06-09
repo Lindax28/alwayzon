@@ -13,7 +13,7 @@ const Address = () => {
         <div className="location">
           <p className="location-box">
             <BiCurrentLocation fill="black"/>
-            <span class="location-text">San Francisco, CA</span>
+            <span className="location-text">San Francisco, CA</span>
           </p>
         </div>
     </div>
