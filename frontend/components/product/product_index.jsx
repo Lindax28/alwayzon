@@ -41,7 +41,7 @@ class ProductIndex extends React.Component {
       <div>
         {/* <div name="top2"></div> */}
         <ul className="product-index">
-          { products.length === 0 ? <li>No results found. Try checking your spelling or use more general terms.</li> : products }
+          { products.length === 0 ? <li className="no-results">No results found. Try checking your spelling or use more general terms.</li> : products }
           {/* <a className="back-to-top" href="#top2">Back to top</a> */}
         </ul>
       </div>
