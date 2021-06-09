@@ -14,6 +14,7 @@ const Greeting = (props) => {
         <h2>Your Account</h2>
         <ul>
           {/* <li>Account</li> */}
+          <li>{<Link to="/cart">Cart</Link>}</li>
           <li>{<Link onClick={props.logout} to="/">Sign Out</Link>}</li>
         </ul>
       </nav>
