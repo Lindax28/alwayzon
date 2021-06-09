@@ -28,61 +28,65 @@
 .address {
   text-decoration: none;
   color: white;
+}
+
+.address-nav {
+  border: 1px solid $almost-black;
   margin: 2px;
   padding: 0.7em;
   padding-left: 1em;
   padding-right: 1em;
-  border: 1px solid $almost-black;
+  position: relative;
+  text-decoration: none;
+  &:hover .location {
+    display: block;
+  }
   &:hover {
     border: 1px solid gray;
     cursor: pointer;
   }
-  &:hover .location {
-    display: block;
+}
+
+.location {
+  display: none;
+  font-size: 0.7rem;
+  position: absolute;
+  background-color: white;
+  border: 1px solid gray;
+  top: 3.3rem;
+  right: 0.8rem;
+  cursor: default;
+  height: 5em;
+  width: 18em;
+  border-radius: 0.4em;
+  padding: 1em;
+  &:after {
+  content: "";
+  position:absolute;
+  margin-top:-6px;
+  margin-left:-5px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid white;
+  right: 8px; 
+  top: 0px;
   }
 }
 
-// .location {
-//   display: none;
-//   font-size: 0.5rem;
-//   position: absolute;
-//   background-color: white;
-//   border: 1px solid gray;
-//   top: 29px;
-//   left: 117px;
-//   cursor: default;
-//   height: 5em;
-//   width: 13em;
-//   border-radius: 0.2em;
-//   padding: 6px 8px;
-//   &:after {
-//   content: "";
-//   position:absolute;
-//   margin-top:-6px;
-//   margin-left:-5px;
-//   border-left: 12px solid transparent;
-//   border-right: 12px solid transparent;
-//   border-bottom: 12px solid white;
-//   right: 8px; 
-//   top: 0px;
-//   }
-// }
-
-// .location-box {
-//   font-size: 0.7rem;
-//   color: $almost-black;
-//   outline: none;
-//   margin: 3px;
-//   padding: 2px;
-//   border: 1px solid $almost-black;
-//   border-radius: 0.5em;
-//   box-shadow:0 0 3px #bfbfbf inset;
-//   .location-text {
-//     font-size: 0.4rem;
-//     padding-bottom: 1em;
-//     padding-left: 0.5em;
-//   }
-// }
+.location-box {
+  font-size: 1rem;
+  outline: none;
+  padding: 0.2em;
+  border: 1px solid lightgrey;
+  border-radius: 0.5em;
+  box-shadow:0 1px 8px #bfbfbf inset;
+  .location-text {
+    color: gray;
+    font-size: 0.8rem;
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+  }
+}
 
 // Searchbar
 .searchbar {
@@ -250,7 +254,7 @@
   }
   h2 {
     font-weight: bold;
-    margin: 0.5em;
+    margin-bottom: 0.5em;
   }
   li, li>* {
     line-height: 1.2em;

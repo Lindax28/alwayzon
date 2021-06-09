@@ -48,7 +48,6 @@ aside {
 
 .add-to-cart {
   display: inline-block;
-  text-decoration: none;
   background: linear-gradient(#ffe07d, #ffd95e);
   padding: 0.7em;
   border-radius: 1em;
@@ -58,7 +57,7 @@ aside {
   margin: 2px;
   margin-bottom: 5px;
     &:hover {
-      background: linear-gradient(#ffdd6e, #ffcd29);
+      background: linear-gradient(#ffdd6e, #ffc400);
       cursor: pointer;
     }
 }
