@@ -38,6 +38,9 @@ class ProductShow extends React.Component {
     midnight.setHours(24, 0, 0, 0);
     const hoursTilMidnight = Math.floor((midnight.getTime()-now.getTime())/3600/1000);
     const minutesTilMidnight = Math.floor((midnight.getTime()-now.getTime())/60/1000 - (60 * hoursTilMidnight));
+
+    let reviewList = reviews.map((review, idx) => <ReviewIndexItem user={users[review.userId]} review={review} key={`review-${idx}`} />);
+
     return(
       <div className="product-show-page">
         <main className="product-info">
@@ -74,20 +77,21 @@ class ProductShow extends React.Component {
         </main>
         <section className="reviews">
           <section className="review-ratings">
-            <h2>Customer reviews</h2>
-            <div>Rating: {product.averageRating || 'No Reviews yet'}</div>
-            <p>{reviews.length} global {reviews.length === 1 ? "rating" : "ratings"}</p>
+            <h2>Customer reviews</h2><br></br>
+            <div>Rating: {product.averageRating ? `${product.averageRating} out of 5` : 'No Reviews yet'}</div><br></br>
+            <p className="gray">{reviews.length} global {reviews.length === 1 ? "rating" : "ratings"}</p>
+            <hr />
             <h3>Review this product</h3>
             <p>Share your thoughts with other customers</p>
-            <hr></hr>
             <Link to={`/products/${product.id}/review`}>
-              <button type="button" className="redirect-signup glow-on-click">Write a customer review</button>
+              <button type="button" className="write-review glow-on-click">Write a customer review</button>
             </Link>
             <hr></hr>
           </section>
           <section className="review-details">
+            <h3>Top reviews from the United States</h3>
             <ul>
-              {reviews.map((review, idx) => <ReviewIndexItem user={users[review.userId]} review={review} key={`review-${idx}`} />)}
+              {reviewList.length === 0 ? <li>There are no customer reviews yet.</li> : reviewList }
             </ul>
             
           </section>

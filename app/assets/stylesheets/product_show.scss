@@ -79,5 +79,54 @@ aside {
 // Reviews
 
 .reviews {
+  margin-top: 3em;
+  padding-top: 3em;
+  border-top: 0.05em solid lightgrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  h2 {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  h3 {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+  }
+  .review-ratings {
+    flex-grow: 0.1;
+    margin-right: 3em;
+  }
+}
 
+.write-review {
+  margin: 2em;
+  font-size: 0.8rem;
+  width: 18rem;
+  padding: 0.45rem;
+  border: 1px solid lightgrey;
+  border-radius: 0.7em;
+  background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2);
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(#f2f2f2, #e5e5e5);
+  }
+}
+
+.review-title {
+  font-weight: bold;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+.review-rating {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.review-body {
+  margin-top: 0.8em;
+  margin-bottom: 2em;
 }

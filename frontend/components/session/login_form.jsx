@@ -51,10 +51,10 @@ class LoginForm extends React.Component {
         <form className="auth-form" onSubmit={this.handleSubmit}>
           <h1>Sign-In</h1>
           <label>Email<br></br>
-            <input type="text" value={this.state.email} onChange={this.handleInput("email")} className="login-input"/>
+            <input type="text" value={this.state.email} onChange={this.handleInput("email")} />
           </label>
           <label>Password<br></br>
-            <input type="password" value={this.state.password} onChange={this.handleInput("password")} className="login-input"/>
+            <input type="password" value={this.state.password} onChange={this.handleInput("password")} />
           </label>
           <div className="auth-errors">{this.renderErrors()}</div>
           <button type="submit" className="auth-button submit-button glow-on-click">Sign-In</button>

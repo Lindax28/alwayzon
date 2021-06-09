@@ -56,30 +56,37 @@ class ReviewForm extends React.Component {
     }
     return(
       <main className="review-page">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="review-form">
           <h2>Create Review</h2>
-          <img src={this.props.product.imageUrl} alt={this.props.product.name} />
-          <p>{this.props.product.name}</p>
-          <h3>Overall Rating</h3>
-          <div className="rate" onChange={this.handleInput("rating")}>
-            <input type="radio" id="star5" name="rate" value="5" />
-            <label htmlFor="star5" title="text">5 stars</label>
-            <input type="radio" id="star4" name="rate" value="4" />
-            <label htmlFor="star4" title="text">4 stars</label>
-            <input type="radio" id="star3" name="rate" value="3" />
-            <label htmlFor="star3" title="text">3 stars</label>
-            <input type="radio" id="star2" name="rate" value="2" />
-            <label htmlFor="star2" title="text">2 stars</label>
-            <input type="radio" id="star1" name="rate" value="1" />
-            <label htmlFor="star1" title="text">1 star</label>
+          <div className="review-product">
+            <img src={this.props.product.imageUrl} alt={this.props.product.name} />
+            <p>{this.props.product.name}</p>
           </div>
-          <label>Add a headline
+          <div className="review-stars">
+            <h3>Overall Rating</h3>
+            <div className="rate" onChange={this.handleInput("rating")}>
+              <input type="radio" id="star5" name="rate" value="5" />
+              <label htmlFor="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="rate" value="4" />
+              <label htmlFor="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="rate" value="3" />
+              <label htmlFor="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="rate" value="2" />
+              <label htmlFor="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="rate" value="1" />
+              <label htmlFor="star1" title="text">1 star</label>
+            </div>
+          </div>
+          <label className="post-review-title"><h3>Add a headline</h3>
             <input type="text" value={this.state.title} onChange={this.handleInput("title")} placeholder="What's most important to know?"/>
           </label>
-          <label>Add a written review
+          <label className="post-review-body"><h3>Add a written review</h3>
             <textarea onChange={this.handleInput("body")} cols="30" rows="10" defaultValue={this.state.body} placeholder="What did you like or dislike? What did you use this product for?"></textarea>
           </label>
-            {this.formComplete() ? <button type="submit">Submit</button> : <button type="submit" disabled >Submit</button>}
+          <div className="review-buttons">
+            <button type="button" onClick={this.props.history.goBack} className="cancel-button">Cancel</button>
+            {this.formComplete() ? <button type="submit" className="login-button submit-review-button glow-on-click">Submit</button> : <button type="submit" className="login-button disabled-review-button" disabled >Submit</button>}
+          </div>
         </form>
       </main>
     )

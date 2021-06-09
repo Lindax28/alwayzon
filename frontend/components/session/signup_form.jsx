@@ -65,19 +65,19 @@ class SignupForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="auth-form">
           <h1>Create account</h1>
           <label>First name
-            <input type="text" value={this.state.firstName} onChange={this.handleInput("firstName")} className="signup-input"/>
+            <input type="text" value={this.state.firstName} onChange={this.handleInput("firstName")} />
           </label>
           <label>Last name
-            <input type="text" value={this.state.lastName} onChange={this.handleInput("lastName")} className="signup-input"/>
+            <input type="text" value={this.state.lastName} onChange={this.handleInput("lastName")} />
           </label>
           <label>Email
-            <input type="text" value={this.state.email} onChange={this.handleInput("email")} className="signup-input"/>
+            <input type="text" value={this.state.email} onChange={this.handleInput("email")} />
           </label>
           <label>Password
-            <input type="password" value={this.state.password} onChange={this.handleInput("password")} className="signup-input"/>
+            <input type="password" value={this.state.password} onChange={this.handleInput("password")} />
           </label>
           <label>Re-enter password
-            <input type="password" value={this.state.confirmPassword} onChange={this.handleInput("confirmPassword")} className="signup-input"/>
+            <input type="password" value={this.state.confirmPassword} onChange={this.handleInput("confirmPassword")} />
           </label>
           <div className="auth-errors">{this.renderErrors()}</div>
           <button type="submit" className="submit-button auth-button glow-on-click">Create your Alwayzon account</button>
