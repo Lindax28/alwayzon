@@ -6,6 +6,8 @@ import ReviewIndexItem from './review_index_item';
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentWillMount() {
@@ -16,6 +18,10 @@ class ProductShow extends React.Component {
     if(this.props.match.params.productId !== nextProps.match.params.productId) {
         this.props.fetchProduct(nextProps.match.params.productId);
     }
+  }
+
+  addToCart() {
+    this.props.createCartItem({ user_id: this.props.userId, product_id: this.props.product.id, quantity: 1});
   }
 
   render() {
@@ -44,7 +50,7 @@ class ProductShow extends React.Component {
     return(
       <div className="product-show-page">
         <main className="product-info">
-          <img src={product.imageUrl} alt={product.name} width="100px" height="100px"/>
+          <img src={product.imageUrl} alt={product.name} />
           <section>
             <h1>{product.name}</h1>
             <div>Rating: {product.averageRating ? parseFloat(product.averageRating).toFixed(1) : 'No Reviews yet'}</div>
@@ -67,7 +73,7 @@ class ProductShow extends React.Component {
               </div>
             </div>
             <p className="in-stock">In Stock.</p>
-            <Link to="/cart" className="add-to-cart">Add to Cart</Link>
+            <Link to="/cart" onClick={this.addToCart} className="add-to-cart">Add to Cart</Link>
             <div className="shipped-by line-height">
               <div><span className="gray">Ships from</span> &nbsp;&nbsp;Alwayzon.com</div>
               <div><span className="gray">Sold by</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alwayzon.com</div>

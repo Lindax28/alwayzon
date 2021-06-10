@@ -127,14 +127,6 @@ ApplicationRecord.transaction do
   dog_bags_review = Review.create!(user_id: demo_user2.id, product_id: dog_bags.id, rating: 2, title: "Has air holes", body: "These bags are covered in air holes to air out the smelliness. Not ideal for my hands.")
   dog_bags_review2 = Review.create!(user_id: demo_user9.id, product_id: dog_bags.id, rating: 4, title: "Safe for kids!", body: "The air holes make it safe for kids! No safety hazards here!")
   
-
-
-  
-
-
-
-
-
-
-
+  cart_item1 = CartItem.create!(user_id: demo_user1.id, product_id: toner.id, quantity: 1)
+  cart_item2 = CartItem.create!(user_id: demo_user1.id, product_id: airpods.id, quantity: 1)
 end
