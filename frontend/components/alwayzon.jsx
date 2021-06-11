@@ -5,6 +5,7 @@ import ReviewFormContainer from './review/review_form_container';
 import ProductIndexContainer from './product/product_index_container';
 import ProductShowContainer from './product/product_show_container';
 import SplashContainer from './home/splash_container';
+import CartIndexContainer from './cart/cart_index_container';
 import { ProtectedRoute } from '../util/route_util';
 
 class Alwayzon extends React.Component {
@@ -17,10 +18,11 @@ class Alwayzon extends React.Component {
     <div>
       <Navbar />
       <Switch>
-        <Route exact path="/products/:productId"><ProductShowContainer /></Route>
         <ProtectedRoute exact path="/products/:productId/review" component={ReviewFormContainer} />
+        <ProtectedRoute exact path="/cart" component={CartIndexContainer} />
+        <Route exact path="/products/:productId"><ProductShowContainer /></Route>
         <Route exact path="/products"><ProductIndexContainer /></Route>
-        <Route exact path="/"><SplashContainer /></Route>
+        <Route path="/*"><SplashContainer /></Route>
       </Switch>
     </div>
   )

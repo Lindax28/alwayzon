@@ -80,6 +80,7 @@
   border: 1px solid lightgrey;
   border-radius: 0.5em;
   box-shadow:0 1px 8px #bfbfbf inset;
+  z-index: 1;
   .location-text {
     color: gray;
     font-size: 0.8rem;
@@ -177,6 +178,7 @@
   width: 10em;
   border-radius: 0.2em;
   padding: 0.8em;
+  z-index: 1;
   :last-child {
     margin-left: 1em;
   }
@@ -249,6 +251,7 @@
   right: 10em;
   border-radius: 0.2em;
   background-color: white;
+  z-index: 1;
   * {
     text-align: center;
   }

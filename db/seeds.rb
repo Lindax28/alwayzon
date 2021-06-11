@@ -75,7 +75,7 @@ ApplicationRecord.transaction do
   unicorn_floatie = Product.create!(name: "Unicorn Pool Inflatable", description: "Up your pool game with a magical, mystical beast (with cupholders!)", category: gamestoys, price: 21.25, keywords: ["floatie", "pool", "unicorn", "inflatable", "summer", "swim", "games", "toys", "kids", "toy"])
   unicorn_floatie.photo.attach(io: File.open("db/seed_images/pexels-kindel-media-7294550.jpg"), filename: "unicornfloatie.jpg")
 
-  rubber_ducky = Product.create!(name: "Rubber Ducky", description: "Designed by Google to maximize productivity, this rubber ducky is invaluable for debugging. It can also be used for bathtime debugging.", category: gamestoys, price: 21.25, keywords: ["rubber", "pool", "ducky", "bath", "bathtime", "kids", "games", "toys", "toy"])
+  rubber_ducky = Product.create!(name: "Rubber Ducky", description: "Designed by Google to maximize productivity, this rubber ducky is invaluable for debugging. It can also be used for bathtime debugging.", category: gamestoys, price: 3.25, keywords: ["rubber", "pool", "ducky", "bath", "bathtime", "kids", "games", "toys", "toy"])
   rubber_ducky.photo.attach(io: File.open("db/seed_images/timothy-dykes-LhqLdDPcSV8-unsplash.jpg"), filename: "rubberducky.jpg")
 
   rubiks_cube = Product.create!(name: "Rubik's Cube", description: "Hours of fun or frustration!", category: gamestoys, price: 11.60, keywords: ["rubik", "rubik's", "rubiks", "cube", "game", "kids", "games", "toys", "toy"])
@@ -127,14 +127,6 @@ ApplicationRecord.transaction do
   dog_bags_review = Review.create!(user_id: demo_user2.id, product_id: dog_bags.id, rating: 2, title: "Has air holes", body: "These bags are covered in air holes to air out the smelliness. Not ideal for my hands.")
   dog_bags_review2 = Review.create!(user_id: demo_user9.id, product_id: dog_bags.id, rating: 4, title: "Safe for kids!", body: "The air holes make it safe for kids! No safety hazards here!")
   
-
-
-  
-
-
-
-
-
-
-
+  cart_item1 = CartItem.create!(user_id: demo_user1.id, product_id: toner.id, quantity: 1)
+  cart_item2 = CartItem.create!(user_id: demo_user1.id, product_id: airpods.id, quantity: 1)
 end
