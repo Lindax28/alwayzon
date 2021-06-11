@@ -6,7 +6,8 @@ class CartIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      update: false
+      update: false,
+      loaded: false
     };
 
     this.subtotal = this.subtotal.bind(this);
@@ -18,7 +19,7 @@ class CartIndex extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchCart();
+    this.props.fetchCart().then(()=>this.setState({ loaded: true }))
   };
 
   subtotal() {
@@ -47,28 +48,32 @@ class CartIndex extends React.Component {
   }
 
   render() {
-    let cartItems = this.props.cartItems.map((cartItem, idx) => <CartIndexItem key={`cartItem-${idx}`} cartItem={cartItem} product={this.props.products[cartItem.productId]} fetchCart = {this.props.fetchCart} deleteCartItem={this.props.deleteCartItem} updateCartItem={this.props.updateCartItem}/>)
-    if (cartItems.length === 0) {
-      return(this.emptyCart())
+    if (this.state.loaded) {
+      let cartItems = this.props.cartItems.map((cartItem, idx) => <CartIndexItem key={`cartItem-${idx}`} cartItem={cartItem} product={this.props.products[cartItem.productId]} fetchCart = {this.props.fetchCart} deleteCartItem={this.props.deleteCartItem} updateCartItem={this.props.updateCartItem}/>)
+      if (cartItems.length === 0) {
+        return(this.emptyCart())
+      } else {
+        return(
+          <div className="shopping-cart">
+            <ul className="cart-index">
+              <h1>Shopping Cart</h1>
+              <h3>Price</h3>
+              { cartItems }
+              <h2 className="subtotal-cart">Subtotal ({this.quantity()} items): <span className="bold">${this.subtotal()}</span></h2>
+            </ul>
+            <section className="cart-total">
+              <h2 className="subtotal-cart subtotal">Subtotal ({this.quantity()} items): <span className="bold">${this.subtotal()}</span></h2>
+              <div>
+                <input type="checkbox" />&nbsp;
+                <span>This order contains a gift</span>
+              </div>
+              <button className="auth-button proceed-to-checkout" type="button">Proceed to checkout</button>
+            </section>
+          </div>
+        )
+      }
     } else {
-      return(
-        <div className="shopping-cart">
-          <ul className="cart-index">
-            <h1>Shopping Cart</h1>
-            <h3>Price</h3>
-            { cartItems }
-            <h2 className="subtotal-cart">Subtotal ({this.quantity()} items): <span className="bold">${this.subtotal()}</span></h2>
-          </ul>
-          <section className="cart-total">
-            <h2 className="subtotal-cart subtotal">Subtotal ({this.quantity()} items): <span className="bold">${this.subtotal()}</span></h2>
-            <div>
-              <input type="checkbox" />&nbsp;
-              <span>This order contains a gift</span>
-            </div>
-            <button className="auth-button proceed-to-checkout" type="button">Proceed to checkout</button>
-          </section>
-        </div>
-      )
+      return null;
     }
   }
 }

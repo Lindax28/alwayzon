@@ -15,10 +15,12 @@ const ProductIndexItem = props => {
         <img src={props.product.imageUrl} alt={props.product.name} width="100px" height="100px"/>
         <h2>{props.product.name}</h2>
       </Link>
-      {/* <div className="star-ratings-css">
-        <div className="star-ratings-css-top" style={`width: ${parseFloat(props.product.averageRating)/5}`}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <div className="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      </div> */}
+      <div className="rating-index">{props.product.averageRating ? (
+        <div className="star-ratings-css-index">
+          <div className="star-ratings-css-index-top" style={{width: `${parseFloat(props.product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <div className="star-ratings-css-index-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        </div>) : 'No Reviews yet'}
+      </div>
         <h2 className="price">${parseFloat(props.product.price).toFixed(2)}</h2>
         <p className="shipping-info">
           <img id="time-logo" src={window.time} alt="time logo" />

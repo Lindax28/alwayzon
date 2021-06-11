@@ -75,7 +75,13 @@ class ProductShow extends React.Component {
           <img src={product.imageUrl} alt={product.name} />
           <section>
             <h1>{product.name}</h1>
-            <div>Rating: {product.averageRating ? parseFloat(product.averageRating).toFixed(1) : 'No Reviews yet'}</div>
+            <div>{product.averageRating ? (
+              <div className="star-ratings-css-product">
+                <div className="star-ratings-css-product-top" style={{width: `${parseFloat(product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div className="star-ratings-css-product-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              </div>) : 'No Reviews yet'}
+            </div>
+            <span className="rating-count">{this.props.reviews.length} {this.props.reviews.length === 1 ? "rating" : "ratings"}</span>
             <hr />
             <div>Price: <span className="product-price">${parseFloat(product.price).toFixed(2)}</span> & FREE Returns</div>
             <hr />
@@ -106,7 +112,11 @@ class ProductShow extends React.Component {
         <section className="reviews">
           <section className="review-ratings">
             <h2>Customer reviews</h2><br></br>
-            <div>Rating: {product.averageRating ? `${parseFloat(product.averageRating).toFixed(1)} out of 5` : 'No Reviews yet'}</div><br></br>
+            <div>{product.averageRating ? (
+            <div className="star-ratings-css-review">
+              <div className="star-ratings-css-review-top" style={{width: `${parseFloat(product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div className="star-ratings-css-review-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            </div>) : 'No Reviews yet'}</div>
             <p className="gray">{reviews.length} global {reviews.length === 1 ? "rating" : "ratings"}</p>
             <hr />
             <h3>Review this product</h3>

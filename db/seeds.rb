@@ -30,6 +30,16 @@ ApplicationRecord.transaction do
   friends_dvd = Product.create!(name: "10 Seasons of Friends on DVD", description: "All 10 seasons of Friends on DVD. ", category: booksmovies, price: 21.90, keywords: ["dvd", "friends", "tv", "show", "movie", "movies", "sitcom", "cast", "episodes"])
   friends_dvd.photo.attach(io: File.open("db/seed_images/brett-jordan-ydaEsk6WNBw-unsplash.jpg"), filename: "friendsdvd.jpg")
 
+  harry_potter_books = Product.create!(name: "Harry Potter Collector’s Edition", description: "Bundle of all seven books in the Harry Potter series for ‘Sirius’ fans of the Wizarding World.", category: booksmovies, price: 80.99, keywords: ["harry", "potter", "book", "magic", "wizard", "movie", "books", "movies", "series"])
+  harry_potter_books.photo.attach(io: File.open("db/seed_images/madalyn-cox-YuUz5uQkaXM-unsplash.jpg"), filename: "harrypotterbooks.jpg")
+  harry_potter_books_review = Review.create!(user_id: demo_user5.id, product_id: harry_potter_books.id, rating: 5, title: "Great buy!", body: "I love the HP series but the DVDs were too expensive so I bought the books.")
+  harry_potter_books_review2 = Review.create!(user_id: demo_user9.id, product_id: harry_potter_books.id, rating: 1, title: "Old and used!", body: "Too many books. Do not recommend.")
+
+  bread_cookbook= Product.create!(name: "Great Bread!", description: "Nearly a hundred simple, delicious bread recipes to help even the newest baker ‘get that bread’ in the kitchen.", category: booksmovies, price: 22.49, keywords: ["cook", "book", "books", "cookbook", "cookbooks", "bread", "food", "recipes", "recipe", "simple", "easy", "beginner", "cooking", "baking"])
+  bread_cookbook.photo.attach(io: File.open("db/seed_images/james-lee-vnoY9lMM8dg-unsplash.jpg"), filename: "breadcookbook.jpg")
+  bread_cookbook_review = Review.create!(user_id: demo_user2.id, product_id: bread_cookbook.id, rating: 3, title: "Good gift", body: "Got it as a birthday gift from my first cousin twice removed. Nice book with easy-to-follow recipes.")
+  bread_cookbook_review2 = Review.create!(user_id: demo_user6.id, product_id: bread_cookbook.id, rating: 5, title: "Yummy recipes!!", body: "I am a bread enthusiast so you could imagine my excitement when I first stumbled upon this book. And 60 loaves later, still no regrets.")
+
   beautyskincare = "Beauty and Skincare"
 
   toner = Product.create!(name: "Mario Badescu Facial Toner", description: "Soothe and hydrate skin with a subtle greenish fragrance.", category: beautyskincare, price: 16.80, keywords: ["skin", "hydrate", "water", "toner", "face", "skincare", "beauty", "skincare"])
@@ -69,6 +79,16 @@ ApplicationRecord.transaction do
   nike_air_shoes.photo.attach(io: File.open("db/seed_images/ryan-plomp-PGTO_A0eLt4-unsplash.jpg"), filename: "nikeairshoes.jpg")
   nike_air_shoes_review = Review.create!(user_id: demo_user7.id, product_id: nike_air_shoes.id, rating: 2, title: "Did not fit", body: "I learned today that shoes are not one-size-fits-all. Disappointed :(")
   nike_air_shoes_review2 = Review.create!(user_id: demo_user6.id, product_id: nike_air_shoes.id, rating: 3, title: "Just okay", body: "I bought these to use as beds for my hamsters. Hard to clean.")
+
+  star_earrings= Product.create!(name: "Golden Star Earrings", description: "24k gold earrings in the shape of twinkly stars.", category: fashionjewelry, price: 95.97, keywords: ["gold", "earrings", "stars", "dangling", "jewelry", "hanging", "diamonds"])
+  star_earrings.photo.attach(io: File.open("db/seed_images/gabrielle-henderson-XTp4ZzD76Xw-unsplash.jpg"), filename: "starearrings.jpg")
+  star_earrings_review = Review.create!(user_id: demo_user4.id, product_id: star_earrings.id, rating: 4, title: "Love them!", body: "Could not be more happy with my purchase! These look just like the real thing.")
+  star_earrings_review2 = Review.create!(user_id: demo_user7.id, product_id: star_earrings.id, rating: 1, title: "False advertising", body: "Not real stars from outer space. These are made of gold.")
+
+  tan_wallet= Product.create!(name: "Thin tan wallet", description: "Leather card holder with space for one card and maybe a few dollar bills, and thin enough to fit comfortably in your pocket", category: fashionjewelry, price: 23.99, keywords: ["thin", "tan", "wallet", "brown", "cards", "holder", "fashion", "leather", "money"])
+  tan_wallet.photo.attach(io: File.open("db/seed_images/stephen-phillips-hostreviews-co-uk-em37kS8WJJQ-unsplash.jpg"), filename: "tanwallet.jpg")
+  tan_wallet_review = Review.create!(user_id: demo_user5.id, product_id: tan_wallet.id, rating: 3, title: "It’s a wallet", body: "I don’t make much money nowadays ever since I lost my job at Mickey D’s, so I decided to downgrade to a smaller and thinner wallet. This one gets the job done, unlike me.")
+  tan_wallet_review2 = Review.create!(user_id: demo_user9.id, product_id: tan_wallet.id, rating: 1, title: "Poor quality!", body: "You get what you pay for. This wallet ripped in half within a few days and all my Benjamins fell out!!")
 
   gamestoys = "Games and Toys"
 
@@ -117,6 +137,11 @@ ApplicationRecord.transaction do
   airpods_review = Review.create!(user_id: demo_user8.id, product_id: airpods.id, rating: 3, title: "Easy to lose", body: "I kept losing them so I had to tape them to my ears permanently. Sound was good.")
   airpods_review2 = Review.create!(user_id: demo_user9.id, product_id: airpods.id, rating: 5, title: "Great for hands-free use", body: "Really useful whenever I have my hands stuck in jars and need to make phone calls.")
   
+  alwayzon_fire = Product.create!(name: "Alwayzon Fire", description: "Enjoy on-the-go reading with the Alwayzon Fire. Thousands of books at your fingertips. Now with wifi leeching!", category: electronics, price: 150.99, keywords: ["read", "reading", "fire", "books", "alwayzon", "e-books", "online", "book"])
+  alwayzon_fire.photo.attach(io: File.open("db/seed_images/olga-tutunaru-RMgQQntEkWM-unsplash.jpg"), filename: "alwayzonfire.jpg")
+  alwayzon_fire_review = Review.create!(user_id: demo_user3.id, product_id: alwayzon_fire.id, rating: 5, title: "Reading is fun!", body: "My daughter used to hate reading. Ever since I got her a Fire, she said she likes physical books better. Got her to like books!")
+  alwayzon_fire_review2 = Review.create!(user_id: demo_user7.id, product_id: alwayzon_fire.id, rating: 2, title: "Pricey!", body: "Why pay $100+ when I can read unlimited books for free at my local library? Alwayzon sus.")
+
   sportsoutdoors = "Sports and Outdoors"
   
   bike_helmet = Product.create!(name: "Bike helmet", description: "Protect your noggin. Stylish and crafted to fit normal-sized heads.", category: sportsoutdoors, price: 29.99, keywords: ["helmet", "bike", "bicycle", "motorcycle", "gear", "sports", "outdoors", "safety", "protection", "head"])
