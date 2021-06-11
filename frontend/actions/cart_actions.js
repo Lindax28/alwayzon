@@ -14,18 +14,18 @@ export const dropCartItem = cartItem => ({
   cartItem
 });
 
-export const fetchCart = () => dispatch => {
+export const fetchCart = () => dispatch => (
   APIUtil.getCart().then(payload => dispatch(receiveCartItems(payload)))
-};
+);
 
-export const deleteCartItem = cartId => dispatch => {
-  APIUtil.removeCartItem(cartId).then(payload => dispatch(dropCartItem(payload)))
-};
+export const deleteCartItem = cartId => dispatch => (
+  APIUtil.removeCartItem(cartId).then(cartItem => dispatch(dropCartItem(cartItem)))
+);
 
-export const createCartItem = cartItem => dispatch => {
+export const createCartItem = cartItem => dispatch => (
   APIUtil.addCartItem(cartItem).then(payload => dispatch(receiveCartItems(payload)))
-};
+);
 
-export const updateCartItem = cartItem => dispatch => {
+export const updateCartItem = cartItem => dispatch => (
   APIUtil.updateQuantity(cartItem).then(payload => dispatch(receiveCartItems(payload)))
-};
+);

@@ -9,8 +9,9 @@ end
 @cart_items.each do |cart_item|
   json.products do
     json.set! cart_item.product.id do
-      json.extract! cart_item.product, :id, :name, :category, :price
+      json.extract! cart_item.product, :id, :name, :description, :category, :price, :average_rating
       json.imageUrl url_for(cart_item.product.photo)
+      json.reviewIds cart_item.product.reviews.pluck(:id)
     end
   end
 end

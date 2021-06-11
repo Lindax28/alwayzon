@@ -2,12 +2,17 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 import ReviewIndexItem from './review_index_item';
+import { FcCheckmark } from 'react-icons/fc';
 
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      showFeedback: false
+    };
 
     this.addToCart = this.addToCart.bind(this);
+    this.showPopup = this.showPopup.bind(this);
   }
 
   componentWillMount() {
@@ -20,8 +25,24 @@ class ProductShow extends React.Component {
     }
   }
 
+  showPopup() {
+    if (!this.state.showFeedback) {
+      return null;
+    } else {
+      return(
+        <div className="cart-confirmation">
+          <div className="green-check"><FcCheckmark size={40}/></div>
+          <img src={this.props.product.imageUrl} alt={this.props.product.name} />
+          <h3>Added to Cart</h3>
+          <button className="write-review continue-shopping" onClick={()=>this.setState({showFeedback: false})}>Continue Shopping</button>
+          <Link className="add-to-cart view-cart" to="/cart">View Cart</Link>
+        </div>
+      )
+    }
+  }
+
   addToCart() {
-    this.props.createCartItem({ user_id: this.props.userId, product_id: this.props.product.id, quantity: 1});
+    this.props.createCartItem({ user_id: this.props.userId, product_id: this.props.product.id, quantity: 1}).then(()=>this.setState({showFeedback: true}));
   }
 
   render() {
@@ -49,6 +70,7 @@ class ProductShow extends React.Component {
 
     return(
       <div className="product-show-page">
+        {this.showPopup()}
         <main className="product-info">
           <img src={product.imageUrl} alt={product.name} />
           <section>
@@ -73,7 +95,7 @@ class ProductShow extends React.Component {
               </div>
             </div>
             <p className="in-stock">In Stock.</p>
-            <Link to="/cart" onClick={this.addToCart} className="add-to-cart">Add to Cart</Link>
+            <button onClick={()=>this.addToCart()} className="add-to-cart">Add to Cart</button>
             <div className="shipped-by line-height">
               <div><span className="gray">Ships from</span> &nbsp;&nbsp;Alwayzon.com</div>
               <div><span className="gray">Sold by</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alwayzon.com</div>

@@ -2,7 +2,7 @@ class Api::CartItemsController < ApplicationController
   before_action :require_login
 
   def create
-    cart_item = CartItem.find(user_id: current_user.id, product_id: params[:cart_item][:product_id]);
+    cart_item = CartItem.find_by(user_id: current_user.id, product_id: params[:cart_item][:product_id]);
     if cart_item
       cart_item.quantity += 1
     else
@@ -26,7 +26,7 @@ class Api::CartItemsController < ApplicationController
   end
 
   def update
-    cart_item = CartItem.find(user_id: current_user.id, product_id: params[:cart_item][:product_id])
+    cart_item = CartItem.find_by(user_id: current_user.id, product_id: params[:cart_item][:product_id].to_i)
     cart_item.quantity = params[:cart_item][:quantity]
     cart_item.save
     @cart_items = current_user.cart_items
@@ -34,10 +34,9 @@ class Api::CartItemsController < ApplicationController
   end
 
   def destroy
-    cart_item = CartItem.find(user_id: current_user.id, product_id: params[:cart_item][:product_id])
-    cart_item.destroy
-    @cart_items = current_user.cart_items
-    render :index
+    @cart_item = CartItem.find(params[:id].to_i)
+    @cart_item.destroy
+    render :show
   end
 
 end

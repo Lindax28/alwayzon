@@ -33,7 +33,6 @@ class ProductIndex extends React.Component {
 
   render() {
     if (this.state.loading) {
-      console.log("spinner")
       return <Spinner />
     }
     let products = this.props.products.map((product, idx) => <ProductIndexItem key={`product-${idx}`} product={product} />)

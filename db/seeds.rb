@@ -75,7 +75,7 @@ ApplicationRecord.transaction do
   unicorn_floatie = Product.create!(name: "Unicorn Pool Inflatable", description: "Up your pool game with a magical, mystical beast (with cupholders!)", category: gamestoys, price: 21.25, keywords: ["floatie", "pool", "unicorn", "inflatable", "summer", "swim", "games", "toys", "kids", "toy"])
   unicorn_floatie.photo.attach(io: File.open("db/seed_images/pexels-kindel-media-7294550.jpg"), filename: "unicornfloatie.jpg")
 
-  rubber_ducky = Product.create!(name: "Rubber Ducky", description: "Designed by Google to maximize productivity, this rubber ducky is invaluable for debugging. It can also be used for bathtime debugging.", category: gamestoys, price: 21.25, keywords: ["rubber", "pool", "ducky", "bath", "bathtime", "kids", "games", "toys", "toy"])
+  rubber_ducky = Product.create!(name: "Rubber Ducky", description: "Designed by Google to maximize productivity, this rubber ducky is invaluable for debugging. It can also be used for bathtime debugging.", category: gamestoys, price: 3.25, keywords: ["rubber", "pool", "ducky", "bath", "bathtime", "kids", "games", "toys", "toy"])
   rubber_ducky.photo.attach(io: File.open("db/seed_images/timothy-dykes-LhqLdDPcSV8-unsplash.jpg"), filename: "rubberducky.jpg")
 
   rubiks_cube = Product.create!(name: "Rubik's Cube", description: "Hours of fun or frustration!", category: gamestoys, price: 11.60, keywords: ["rubik", "rubik's", "rubiks", "cube", "game", "kids", "games", "toys", "toy"])

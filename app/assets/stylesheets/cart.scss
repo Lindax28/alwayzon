@@ -1,8 +1,9 @@
 .shopping-cart {
-  background-color: #e6e6e6;
+  background-color: #f4f4f4;
   font-family: $default-font;
   display: flex;
   flex-direction: row;
+  padding-bottom: 15em;
   h1 {
     font-size: 2em;
   }
@@ -14,20 +15,15 @@
   .cart-index {
     background-color: white;
     border-radius: 0.1em;
-    flex-grow: 2;
-    margin: 3em;
+    flex-grow: 1;
+    margin: 2em;
+    margin-right: 0em;
     padding: 1.5em;
-    .subtotal {
-      border-top: 1px solid gray;
-      padding-top: 1em;
-      font-size: 1.3em;
-      text-align: right;
-    }
   }
   .cart-total {
     background-color: white;
     border-radius: 0.1em;
-    margin: 3em;
+    margin: 2em;
   }
 }
 
@@ -52,6 +48,10 @@
   .cart-product-details {
     margin-left: 2em;
     width: 30em;
+    .link-product-name {
+      text-decoration: none;
+      color: $almost-black;
+    }
       h2 {
         font-size: 1.3em;
         letter-spacing: 0.03em;
@@ -70,11 +70,14 @@
       display: flex;
       flex-direction: row;
       margin-top: 2em;
-      input[type="text"] {
+      input[type="number"] {
         margin-left: 0.5em;
         margin-right: 0.5em;
         width: 3em;
-        padding: 0.3em;
+        padding: 0.4em;
+      }
+      label {
+        letter-spacing: 0.1em;
       }
     }
   }
@@ -103,5 +106,75 @@
   &:hover {
     cursor: pointer;
     text-decoration: underline;
+  }
+}
+
+.subtotal-cart {
+  border-top: 1px solid gray;
+  padding-top: 1em;
+  font-size: 1.3rem;
+  text-align: right;
+}
+
+.subtotal {
+  border: none;
+  margin-bottom: 1em;
+}
+
+.cart-total {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  height: 12em;
+}
+
+.proceed-to-checkout {
+  margin-top: 2em;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 0 1px lightgrey;
+    transform: translateY(1px);
+  }
+}
+
+.empty-cart-page {
+  background-color: #f4f4f4;
+  padding-top: 1em;
+  padding-bottom: 23em;
+  font-family: $default-font;
+  
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: row;
+  background: white;
+  margin: 5em;
+  padding: 3em;
+  img {
+    width: 8em;
+    height: auto;
+    margin-right: 2em;
+  }
+}
+
+.empty-cart-text {
+  h1 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+  }
+}
+
+.link-to-home {
+  text-decoration: none;
+  color: #0094b5;
+  &:hover {
+    text-decoration: underline;
+    color: darkorange;
   }
 }
