@@ -7,6 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <meta property="og:title" content="Alwayzon" />
+    <meta property='og:image' content="<%= image_url('home_page.png') %>"/>
+    <meta property="og:description"
+      content="Alwayzon is a clone of the Amazon e-commerce site that allows users to browse and search for products, view and post reviews, and add items to their shopping cart. Alwayzon is built using React/Redux and Ruby on Rails."
+    />
+    <meta property="og:url"
+      content="https://alwayzon.herokuapp.com/"
+    />
+
   </head>
   <script>window.darkLogo = "<%= image_url('dark-logo.png') %>"</script>
   <script>window.lightLogo = "<%= image_url("light-logo.png") %>"</script>
