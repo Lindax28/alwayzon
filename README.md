@@ -1,7 +1,9 @@
 # Alwayzon
 ![Alwayzon logo](/app/assets/images/light-logo.png)
 
-[Alwayzon](https://alwayzon.herokuapp.com/), an Amazon clone, is an e-commerce marketplace and retailer that allows users to browse a range of products and make online purchases. Users can browse products via a category or search filter, post product reviews, view other users' reviews, and add, remove, or update products in their shopping cart.
+[Alwayzon Live Site](https://alwayzon.herokuapp.com/)
+
+Alwayzon, an Amazon clone, is an e-commerce marketplace and retailer that allows users to browse a range of products and make online purchases. Users can browse products via a category or search filter, post product reviews, view other users' reviews, and add, remove, or update products in their shopping cart.
 
 Alwayzon was built with:
 - Ruby on Rails
