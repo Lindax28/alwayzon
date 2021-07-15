@@ -5,7 +5,7 @@ const cartReducer = (state={}, action) => {
   let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_CART_ITEMS:
-      return Object.assign(newState, action.cartItems);
+      return Object.assign({}, action.cartItems);
     case DELETE_CART_ITEM:
       delete newState[action.cartItem.id]
       return newState;

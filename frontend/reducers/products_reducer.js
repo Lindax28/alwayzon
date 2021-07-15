@@ -15,7 +15,7 @@ const productsReducer = (state={}, action) => {
       newState[review.productId].averageRating = averageRating;
       return newState;
     case RECEIVE_CART_ITEMS:
-      return Object.assign({}, state, action.products);
+      return Object.assign({}, action.products);
     case CLEAR_PRODUCTS:
       return {};
     default:

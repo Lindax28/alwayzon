@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/cart_api_util';
 
-export const RECEIVE_CART_ITEMS = "RECEIVE_CART_ITEM";
+export const RECEIVE_CART_ITEMS = "RECEIVE_CART_ITEMS";
 export const DELETE_CART_ITEM = "DELETE_CART_ITEM";
 
 export const receiveCartItems = ({ cartItems, products }) => ({
