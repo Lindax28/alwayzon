@@ -9,13 +9,12 @@ class Cart extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCart().then(()=>this.setState({ loaded: true }))
+    if (this.props.currentUser) {
+      this.props.fetchCart().then(()=>this.setState({ loaded: true }))
+    }
   }
 
   render() {
-    if (!this.state.loaded) {
-      return null;
-    }
     let cartCount = this.props.cartItems.map(item=> item.quantity);
     cartCount = cartCount.reduce((a,b)=>a+b,0);
     const loggedIn = () => (
@@ -25,16 +24,20 @@ class Cart extends React.Component {
         <div className="cart-count">{cartCount}</div>
       </Link>
     );
-  
+    
     const loggedOut = () => (
       <Link to="/login" className="cart bold">
         <CgShoppingCart className="cart-icon" />
         <span>&nbsp;Cart</span>
       </Link>
     );
-    return(
-      this.props.currentUser ? loggedIn() : loggedOut()
-    )
+    if (!this.state.loaded) {
+      return loggedOut();
+    } else {
+        return(
+          this.props.currentUser ? loggedIn() : loggedOut()
+        )
+    }
   }
 }
 
