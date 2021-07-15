@@ -31,6 +31,7 @@
   margin-right: auto;
   max-width: 78%;
   height: auto;
+  border-bottom: 2px solid white;
 }
 
 .cards {
@@ -39,14 +40,14 @@
   left: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-  grid-gap: 4em 2em;
-  margin: 15em;
+  grid-gap: 4em 1.5em;
+  margin: 14.5em;
   .card {
     display: grid;
     grid-template-rows: max-content 300px 1fr;
     border: 0.2em solid white;
     border-top: 0.5em solid white;
-    border-bottom: 2em solid white;
+    border-bottom: 1.5em solid white;
     background-color: white;
     text-decoration: none;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -62,7 +63,7 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-    padding: 1em;
+    padding: 0.5em;
   }
 }
 
@@ -164,5 +165,31 @@
   }
   87.5% {
     box-shadow: 0em -2.6em 0em 0em rgba(255,172,56, 0.2), 1.8em -1.8em 0 0em rgba(255,172,56, 0.2), 2.5em 0em 0 0em rgba(255,172,56, 0.2), 1.75em 1.75em 0 0em rgba(255,172,56, 0.2), 0em 2.5em 0 0em rgba(255,172,56, 0.2), -1.8em 1.8em 0 0em rgba(255,172,56, 0.5), -2.6em 0em 0 0em rgba(255,172,56, 0.7), -1.8em -1.8em 0 0em #ffac38;
+  }
+}
+
+
+/* Responsive Style */
+@media (max-width: 1450px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    grid-gap: 3em 1em;
+    margin: 11em;
+    .card {
+      grid-template-rows: max-content 250px 1fr;
+    }
+    h2 {
+      font-size: 1em;
+    }
+    img {
+      padding: 0.5em;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
+    margin: 9em;
   }
 }
