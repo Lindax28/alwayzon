@@ -10,6 +10,19 @@
   height: 3.7rem;
 }
 
+@media (max-width: 1450px) {
+  .navbar {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    font-size: 0.62em;
+    height: 3.5rem;
+  }
+}
+
 // Logo
 .dark-logo {
   img {
@@ -21,6 +34,14 @@
   }
   :hover {
     border: 1px solid gray;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dark-logo {
+    img {
+      padding: 0.5em 0.5em 0em 0.5em;
+    }
   }
 }
 
@@ -101,10 +122,10 @@
   border-right: none;
   border-left: none;
   outline: none;
-  &:focus {
-    box-shadow: 0px 0px 0px 3px #ffb917 inset;
+    &:focus {
+      box-shadow: 0px 0px 0px 3px #ffb917 inset;
+    }
   }
-}
 }
 
 .search-input {
@@ -141,6 +162,12 @@
   font-family: $default-font;
   &:hover {
     background-color: #cccccc;
+  }
+}
+
+@media (max-width: 1200px) {
+  .searchbar {
+    height: 65%;
   }
 }
 
@@ -202,6 +229,24 @@
   &:active {
     fill: $almost-black;
   } 
+}
+
+@media (max-width: 1550px) {
+  .language {
+    right: 17.5em;
+  }
+}
+
+@media (max-width: 1450px) {
+  .language {
+    right: 16em;
+  }
+}
+
+@media (max-width: 1200px) {
+  .language {
+    right: 13em;
+  }
 }
 
 // Greeting
@@ -293,6 +338,27 @@
 #small-msg {
   font-size: 0.8em;
   margin-top: 0.6em;
+}
+
+@media (max-width: 1550px) {
+  .login-flyout {
+    top: 3.5em;
+    right: 8.2em;
+  }
+}
+
+@media (max-width: 1450px) {
+  .login-flyout {
+    top: 3.5em;
+    right: 9em;
+  }
+}
+
+@media (max-width: 1200px) {
+  .login-flyout {
+    top: 5em;
+    right: 11.5em;
+  }
 }
 
 // Cart
