@@ -129,17 +129,12 @@
 }
 
 .proceed-to-checkout {
+  opacity: 0.4;
+  background: linear-gradient(#ffdb82, #f0bf43);
   margin-top: 2em;
   border: none;
   border-radius: 0.5em;
   padding: 0.5em;
-  &:hover {
-    cursor: pointer;
-  }
-  &:active {
-    box-shadow: 0 1px lightgrey;
-    transform: translateY(1px);
-  }
 }
 
 .empty-cart-page {

@@ -59,15 +59,15 @@ class CartIndex extends React.Component {
               <h1>Shopping Cart</h1>
               <h3>Price</h3>
               { cartItems }
-              <h2 className="subtotal-cart">Subtotal ({this.quantity()} items): <span className="bold">${this.subtotal()}</span></h2>
+              <h2 className="subtotal-cart">Subtotal ({this.quantity()} {this.quantity() === 1 ? "item" : "items"}): <span className="bold">${this.subtotal()}</span></h2>
             </ul>
             <section className="cart-total">
-              <h2 className="subtotal-cart subtotal">Subtotal ({this.quantity()} items): <span className="bold">${this.subtotal()}</span></h2>
+              <h2 className="subtotal-cart subtotal">Subtotal ({this.quantity()} {this.quantity() === 1 ? "item" : "items"}): <span className="bold">${this.subtotal()}</span></h2>
               <div>
                 <input type="checkbox" />&nbsp;
                 <span>This order contains a gift</span>
               </div>
-              <button className="auth-button proceed-to-checkout" type="button">Proceed to checkout</button>
+              <button className="proceed-to-checkout" type="button">Proceed to checkout</button>
             </section>
           </div>
         )
