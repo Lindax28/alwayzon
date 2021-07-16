@@ -234,3 +234,25 @@ aside {
   left: 10em;
   bottom: 1.2em;
 }
+
+@media (max-width: 1440px) {
+  .product-show-page {
+    margin: 4em;
+  }
+
+  .product-show-page h1 {
+    font-size: 1.6em;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 1200px) {
+  .product-show-page {
+    margin: 3em;
+  }
+
+  .product-show-page h1 {
+    font-size: 1.4em;
+    line-height: 1.2;
+  }
+}

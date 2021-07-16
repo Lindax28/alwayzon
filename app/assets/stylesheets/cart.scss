@@ -186,3 +186,34 @@
   left: 1.9em;
   font-size: 1.3em;
 }
+
+@media (max-width: 1200px) {
+  .shopping-cart h1 {
+    font-size: 1.5em;
+  }
+
+  .shopping-cart .cart-total {
+    margin: 0.5em;
+    margin-top: 2em;
+  }
+
+  .cart-item h3 {
+    font-size: 1.3em;
+  }
+
+  .cart-item .cart-product-details {
+    width: 25em;
+    h2 {
+      font-size: 1.2em;
+    }
+  }
+
+  .subtotal-cart {
+    font-size: 1rem;
+  }
+
+  .cart-total {
+    padding: 1em;
+    height: 13em;
+  }
+}
