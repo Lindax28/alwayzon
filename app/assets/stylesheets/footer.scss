@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 110%;
+  padding: 2em 20em 1em 20em;
+  background-color: #283840;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+  font-family: $default-font;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  h3 {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  &>* {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    letter-spacing: 1.05px;
+    &>*:not(h3) {
+      color: #d3d4d3;
+      text-decoration: none;
+      margin-bottom: 15px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
