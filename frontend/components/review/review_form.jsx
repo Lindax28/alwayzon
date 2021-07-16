@@ -18,7 +18,7 @@ class ReviewForm extends React.Component {
   }
 
    componentWillMount() {
-    this.props.fetchProduct(this.props.match.params.productId);
+    this.props.fetchProduct(this.props.match.params.productId).then(() => window.scrollTo(0, 0));
   }
 
   componentWillReceiveProps(nextProps) {

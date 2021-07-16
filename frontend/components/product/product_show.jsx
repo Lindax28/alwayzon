@@ -16,7 +16,7 @@ class ProductShow extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchProduct(this.props.match.params.productId);
+    this.props.fetchProduct(this.props.match.params.productId).then(() => window.scrollTo(0, 0));
   }
 
   componentWillReceiveProps(nextProps) {
@@ -79,7 +79,7 @@ class ProductShow extends React.Component {
               <div className="star-ratings-css-product">
                 <div className="star-ratings-css-product-top" style={{width: `${parseFloat(product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
                 <div className="star-ratings-css-product-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-              </div>) : 'No Reviews yet'}
+              </div>) : 'No reviews yet'}
             </div>
             <span className="rating-count">{this.props.reviews.length} {this.props.reviews.length === 1 ? "rating" : "ratings"}</span>
             <hr />
@@ -116,7 +116,7 @@ class ProductShow extends React.Component {
             <div className="star-ratings-css-review">
               <div className="star-ratings-css-review-top" style={{width: `${parseFloat(product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
               <div className="star-ratings-css-review-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            </div>) : 'No Reviews yet'}</div>
+            </div>) : 'No reviews yet'}</div>
             <p className="gray">{reviews.length} global {reviews.length === 1 ? "rating" : "ratings"}</p>
             <hr />
             <h3>Review this product</h3>

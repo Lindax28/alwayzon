@@ -28,14 +28,14 @@ export const receiveReview = ({review, averageRating, user}) => ({
   user
 });
 
-export const fetchProduct = productId => dispatch => {
+export const fetchProduct = productId => dispatch => (
   APIUtil.getProduct(productId).then(payload => dispatch(receiveProduct(payload)))
-};
+);
 
-export const fetchProducts = (search, category) => dispatch => {
+export const fetchProducts = (search, category) => dispatch => (
   APIUtil.getProducts(search, category).then(products => dispatch(receiveProducts(products)))
-};
+);
 
-export const postReview = review => dispatch => {
+export const postReview = review => dispatch => (
   APIUtil.saveReview(review).then(review => dispatch(receiveReview(review)))
-};
+);
