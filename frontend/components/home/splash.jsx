@@ -42,7 +42,7 @@ const Splash = props => {
           <img src={window.sportsandoutdoors} alt="Sports and Outdoors" />
         </Link>
         {/* <a className="back-to-top" href="#">Back to top</a> */}
-        <Footer />
+        {/* <Footer /> */}
       </section>
     </div>
   )

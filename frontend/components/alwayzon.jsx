@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './navbar/navbar';
+import Footer from './footer/footer';
 import ReviewFormContainer from './review/review_form_container';
 import ProductIndexContainer from './product/product_index_container';
 import ProductShowContainer from './product/product_show_container';
@@ -24,6 +25,7 @@ class Alwayzon extends React.Component {
         <Route exact path="/products"><ProductIndexContainer /></Route>
         <Route path="/*"><SplashContainer /></Route>
       </Switch>
+      <Footer />
     </div>
   )
   }
