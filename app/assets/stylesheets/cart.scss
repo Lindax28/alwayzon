@@ -150,7 +150,8 @@
   flex-direction: row;
   background: white;
   margin: 5em;
-  padding: 3em;
+  padding: 5em;
+  border-radius: 1em;
   img {
     width: 8em;
     height: auto;
@@ -159,6 +160,7 @@
 }
 
 .empty-cart-text {
+  line-height: 1.3;
   h1 {
     font-size: 1.8em;
     margin-bottom: 1em;

@@ -110,6 +110,13 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .location {
+    top: 2.8rem;
+    right: 0rem;
+  }
+}
+
 // Searchbar
 .searchbar {
   position: relative;
@@ -233,19 +240,20 @@
 
 @media (max-width: 1550px) {
   .language {
-    right: 17.5em;
+    right: 16.9em;
   }
 }
 
 @media (max-width: 1450px) {
   .language {
-    right: 16em;
+    right: 15.3em;
   }
 }
 
 @media (max-width: 1200px) {
   .language {
-    right: 13em;
+    top: 3.1em;
+    right: 12.3em;
   }
 }
 
@@ -294,7 +302,7 @@
   border: 1px solid gray;
   padding: 1.2em;
   top: 3.5em;
-  right: 10em;
+  right: 9.7em;
   border-radius: 0.2em;
   background-color: white;
   z-index: 1;
@@ -343,21 +351,21 @@
 @media (max-width: 1550px) {
   .login-flyout {
     top: 3.5em;
-    right: 8.2em;
+    right: 8em;
   }
 }
 
 @media (max-width: 1450px) {
   .login-flyout {
-    top: 3.5em;
-    right: 9em;
+    top: 3.9em;
+    right: 7.8em;
   }
 }
 
 @media (max-width: 1200px) {
   .login-flyout {
     top: 5em;
-    right: 11.5em;
+    right: 9.6em;
   }
 }
 

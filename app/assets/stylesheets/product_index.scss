@@ -7,10 +7,6 @@
   grid-gap: 1.7em;
   margin: 7em;
   padding-bottom: 3em;
-  .no-results {
-    font-family: $default-font;
-    margin: 3em;
-  }
   .product-index-item {
     text-decoration: none;
     display: grid;
@@ -33,6 +29,15 @@
     margin-bottom: 1.5em;
     }
   }
+}
+
+.no-results {
+  grid-column: 1/5;
+  text-align: center;
+  list-style-type: none;
+  padding-top: 9em;
+  padding-bottom: 15em;
+  font-family: $default-font;
 }
 
 .price {
@@ -95,10 +100,20 @@
   .product-index {
     margin: 5em;
   }
+
+  .no-results {
+    padding-top: 6em;
+    padding-bottom: 8em;
+  }
 }
 
 @media (max-width: 1200px) {
   .product-index {
     margin: 3em;
+  }
+
+  .no-results {
+    padding-top: 6em;
+    padding-bottom: 3em;
   }
 }
