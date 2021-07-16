@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return(
-    <div>
+    <div className="footer">
       <div>
         <h3>MENU</h3>
         <Link to="/">Home</Link>
@@ -35,3 +35,5 @@ const Footer = () => {
     </div>
   )
 }
+
+export default Footer;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../footer/footer';
 
 const Splash = props => {
     return(
@@ -40,7 +41,8 @@ const Splash = props => {
           <h2>Sports and Outdoors</h2>
           <img src={window.sportsandoutdoors} alt="Sports and Outdoors" />
         </Link>
-        <a className="back-to-top" href="#">Back to top</a>
+        {/* <a className="back-to-top" href="#">Back to top</a> */}
+        <Footer />
       </section>
     </div>
   )
