@@ -23,6 +23,7 @@ class CartIndex extends React.Component {
   };
 
   subtotal() {
+    // For each cart item, calculate item quantity * price and sum up total for all items, rounded to two decimal places
     let subtotal = this.props.cartItems.map(item => item.quantity * parseFloat(this.props.products[item.productId].price));
     return subtotal.reduce((a,b) => a + b, 0).toFixed(2);
   };

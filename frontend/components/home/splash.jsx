@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from '../footer/footer';
 
+// Render cards for each category. Upon click, show products filtered by those category parameters
 const Splash = props => {
     return(
     <div className="splash-page">
@@ -42,7 +42,6 @@ const Splash = props => {
           <img src={window.sportsandoutdoors} alt="Sports and Outdoors" />
         </Link>
         {/* <a className="back-to-top" href="#">Back to top</a> */}
-        {/* <Footer /> */}
       </section>
     </div>
   )

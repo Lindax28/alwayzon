@@ -15,8 +15,11 @@ class Cart extends React.Component {
   }
 
   render() {
-    let cartCount = this.props.cartItems.map(item=> item.quantity);
-    cartCount = cartCount.reduce((a,b)=>a+b,0);
+    // Calculate total number of items in cart
+    let cartCount = this.props.cartItems.map(item => item.quantity);
+    cartCount = cartCount.reduce((a,b) => a + b, 0);
+    
+    // If user is logged in, navigate to cart
     const loggedIn = () => (
       <Link to="/cart" className="cart bold">
         <CgShoppingCart className="cart-icon"/>
@@ -25,12 +28,14 @@ class Cart extends React.Component {
       </Link>
     );
     
+    // If user is logged out, navigate to login
     const loggedOut = () => (
       <Link to="/login" className="cart bold">
         <CgShoppingCart className="cart-icon" />
         <span>&nbsp;Cart</span>
       </Link>
     );
+    
     if (!this.state.loaded) {
       return loggedOut();
     } else {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { LocationIcon } from '../../custom_icons/location_icon'
 import { BiCurrentLocation } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
 
 const Address = () => {
   return(

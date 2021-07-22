@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Upon click, show products filtered by those category parameters
 const CategoryNavbar = props => {
   return(
     <div className="category-navbar">
