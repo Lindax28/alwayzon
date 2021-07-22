@@ -2,6 +2,7 @@ class Api::ProductsController < ApplicationController
 
   def index
     @products = []
+    # Query for products based on search parameters, category parameters, or both if both provided
     if search_params && category_params
       search_params.each do |keyword|
         @products.concat(Product.where(":tag = ANY (keywords)", tag: keyword.downcase).where(category: category_params))
@@ -24,11 +25,13 @@ class Api::ProductsController < ApplicationController
   private
 
   def search_params
+    # If search parameters provided, split into array, else return nil
     return nil if params[:search].length == 0
     params[:search].split(' ')
   end
 
   def category_params
+    # If category parameters provided, split into array, else return nil
     return nil if params[:category].length == 0
     params[:category]
   end
