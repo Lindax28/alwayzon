@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { GoTriangleDown } from 'react-icons/go';
 
 const Greeting = (props) => {
+  
   const loggedIn = () => (
     <div className="greeting">
       <div className="greeting-text">

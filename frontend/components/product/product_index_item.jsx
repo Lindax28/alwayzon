@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductIndexItem = props => {
+  // Set fast delivery date to be two days after current date
   const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   let fastDelivery = new Date();
@@ -9,6 +10,7 @@ const ProductIndexItem = props => {
   let fastDay = days[fastDelivery.getDay()];
   let fastMonth = months[fastDelivery.getMonth()];
   let fastDate = fastDelivery.getDate();
+  
   return(
     <li className="product-index-item">
       <Link className="product-item" to={`/products/${props.product.id}`}>

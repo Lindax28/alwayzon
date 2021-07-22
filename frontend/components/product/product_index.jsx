@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductIndexItem from './product_index_item';
 import queryString from 'query-string';
-import { Link } from 'react-router-dom';
 import Spinner from '../home/spinner';
 
 class ProductIndex extends React.Component {
@@ -21,14 +20,10 @@ class ProductIndex extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.setState({loading: false})
-  // }
-
   componentDidMount() {
     setTimeout(function() { 
       this.setState({loading: false})
-  }.bind(this), 500)
+    }.bind(this), 500)
   }
 
   render() {

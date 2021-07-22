@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 import ReviewIndexItem from './review_index_item';
 import { FcCheckmark } from 'react-icons/fc';
@@ -26,6 +25,7 @@ class ProductShow extends React.Component {
   }
 
   showPopup() {
+    // Display popup when an item is added to the cart
     if (!this.state.showFeedback) {
       return null;
     } else {
@@ -46,6 +46,7 @@ class ProductShow extends React.Component {
   }
 
   render() {
+    // Set fast and slow delivery dates to be two and seven days, respectively, after the current date
     const { product, reviews, users } = this.props;
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -60,6 +61,7 @@ class ProductShow extends React.Component {
     let fastMonth = months[fastDelivery.getMonth()];
     let fastDate = fastDelivery.getDate();
 
+    // Calculate hours and minutes until midnight
     const now = new Date();
     const midnight = new Date(now);
     midnight.setHours(24, 0, 0, 0);
